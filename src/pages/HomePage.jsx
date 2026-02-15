@@ -21,30 +21,33 @@ const HomePage = () => {
   // Transform partyTally to format expected by WikipediaSemiCircle
   const nationalResult = useMemo(() => {
     if (!nationalSummary?.partyTally?.length) return [
-      { name: 'Nepali Congress', votes: 4523120, party: { name: 'NC', color: '#32CD32' } },
-      { name: 'CPN-UML', votes: 3987650, party: { name: 'UML', color: '#DC143C' } },
-      { name: 'CPN-Maoist', votes: 1876540, party: { name: 'Maoist', color: '#8B0000' } },
-      { name: 'RSP', votes: 1234560, party: { name: 'RSP', color: '#FF8C00' } },
-      { name: 'PSP-N', votes: 987650, party: { name: 'PSP-N', color: '#4169E1' } },
+      { name: 'Nepali Congress', votes: 4523120, party: { name: 'NC', color: '#32CD32', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Nepali_Congress_alt_flag.svg' } },
+      { name: 'CPN-UML', votes: 3987650, party: { name: 'UML', color: '#DC143C', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Flag_of_CPN_%28UML%29.svg/250px-Flag_of_CPN_%28UML%29.svg.png' } },
+      { name: 'CPN-Maoist', votes: 1876540, party: { name: 'Maoist', color: '#8B0000', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Logo_of_the_Communist_Party_of_Nepal_%28Maoist_Centre%29.svg/1280px-Logo_of_the_Communist_Party_of_Nepal_%28Maoist_Centre%29.svg.png' } },
+      { name: 'RSP', votes: 1234560, party: { name: 'RSP', color: '#FF8C00', logo: 'https://upload.wikimedia.org/wikipedia/en/e/e9/Logo_of_the_Rastriya_Swatantra_Party.svg' } },
+      { name: 'Shram Sanskriti Party', votes: 987650, party: { name: 'Shram Sanskriti Party', color: '#4169E1', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Nepalese_Election_Symbol_Soil_in_Hands.svg/250px-Nepalese_Election_Symbol_Soil_in_Hands.svg.png' } },
     ];
     return nationalSummary.partyTally.map(p => ({
       name: p.partyName || p.party,
       votes: p.votes || 0,
-      party: { name: p.party, color: p.color || getPartyColor(p.party) }
+      party: {
+        name: p.party,
+        color: p.color || getPartyColor(p.party),
+        logo: p.logo
+      }
     })).sort((a, b) => b.votes - a.votes).slice(0, 5);
   }, [nationalSummary]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="flex font-funnel flex-col min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <Header />
 
       <main className="flex-grow container mx-auto px-4 py-8">
-        {/* Hero Section */}
         <div className="text-center mb-8">
-          <span className="inline-block px-4 py-1.5 bg-red-100 text-red-800 rounded-full text-sm font-bold mb-4">
-            🇳🇵 संघीय संसद् निर्वाचन २०८४
+          <span className="inline-block font-nepali px-4 py-1.5 text-xl font-bold mb-1">
+            संघीय संसद् निर्वाचन २०८४
           </span>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+          <h1 className="text-4xl  md:text-5xl font-extrabold text-gray-900 mb-4">
             Federal Parliament Election <span className="text-red-600">2084</span>
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -54,7 +57,7 @@ const HomePage = () => {
         </div>
 
         {/* Live Update Bar */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-4 rounded-xl mb-8 flex items-center justify-between">
+        <div className="bg-[#2260BF] text-white p-4 rounded-[4px] mb-8 flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -78,16 +81,32 @@ const HomePage = () => {
           </div>
         </div>
 
+        {/* National Result Summary - Now Full Width */}
+        <div className="bg-white rounded-[4px] border border-gray-100 p-6 mb-8">
+          <h2 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
+            <span className="w-2.5 h-2.5 bg-[#2260BF] rounded-full mr-3"></span>
+            National Election Result Summary
+          </h2>
+
+          <WikipediaSemiCircle
+            candidates={nationalResult}
+            totalVotes={nationalResult.reduce((sum, c) => sum + c.votes, 0)}
+            width={400}
+            height={200}
+            showPercentages={true}
+          />
+        </div>
+
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 xl:grid-cols-4 gap-6">
           {/* Map Section - Takes 3 columns */}
           <div className="xl:col-span-3">
             <div className="flex justify-end mb-4">
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-1 flex">
+              <div className="bg-white rounded-[4px] border border-gray-200 p-1 flex">
                 <button
                   onClick={() => setShowCustomMap(true)}
-                  className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${showCustomMap
-                    ? 'bg-blue-600 text-white shadow-sm'
+                  className={`px-4 py-2 text-sm font-bold rounded-[4px] transition-colors ${showCustomMap
+                    ? 'bg-[#2260BF] text-white'
                     : 'text-gray-600 hover:bg-gray-50'
                     }`}
                 >
@@ -95,8 +114,8 @@ const HomePage = () => {
                 </button>
                 <button
                   onClick={() => setShowCustomMap(false)}
-                  className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${!showCustomMap
-                    ? 'bg-blue-600 text-white shadow-sm'
+                  className={`px-4 py-2 text-sm font-bold rounded-[4px] transition-colors ${!showCustomMap
+                    ? 'bg-[#2260BF] text-white'
                     : 'text-gray-600 hover:bg-gray-50'
                     }`}
                 >
@@ -109,25 +128,8 @@ const HomePage = () => {
 
           {/* Sidebar - Takes 1 column */}
           <div className="space-y-6">
-            {/* National Result Summary */}
-            <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
-              <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center">
-                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                National Result
-              </h2>
-
-              {/* Wikipedia-style semi-circle for national result */}
-              <WikipediaSemiCircle
-                candidates={nationalResult}
-                totalVotes={nationalResult.reduce((sum, c) => sum + c.votes, 0)}
-                width={300}
-                height={150}
-                showPercentages={true}
-              />
-            </div>
-
             {/* Key Constituencies */}
-            <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+            <div className="bg-white rounded-[4px] border border-gray-100 p-6">
               <h2 className="text-lg font-bold text-gray-800 mb-4">Key Constituencies</h2>
               <div className="space-y-3">
                 {[
@@ -135,12 +137,12 @@ const HomePage = () => {
                   { name: 'Jhapa-5', candidates: 'KPO vs. KP', margin: '5,400', status: 'Leading' },
                   { name: 'Chitwan-2', candidates: 'RL vs. SK', margin: '12,000', status: 'Winning' },
                 ].map((item, i) => (
-                  <div key={i} className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition cursor-pointer">
+                  <div key={i} className="p-3 bg-gray-50 rounded-[4px] hover:bg-gray-100 transition cursor-pointer">
                     <div className="flex justify-between items-center">
                       <span className="font-semibold text-sm">{item.name}</span>
-                      <span className={`text-xs px-2 py-1 rounded-full ${item.status === 'Close' ? 'bg-yellow-100 text-yellow-800' :
-                        item.status === 'Leading' ? 'bg-blue-100 text-blue-800' :
-                          'bg-green-100 text-green-800'
+                      <span className={`text-[10px] uppercase font-bold px-2 py-0.5 ${item.status === 'Close' ? 'text-yellow-800' :
+                        item.status === 'Leading' ? 'text-blue-800' :
+                          'text-green-800'
                         }`}>
                         {item.status}
                       </span>
@@ -153,35 +155,41 @@ const HomePage = () => {
             </div>
 
             {/* Party Position */}
-            <div className="bg-gradient-to-br from-purple-600 to-indigo-600 text-white rounded-2xl shadow-xl p-6">
-              <h3 className="font-bold mb-3">Seat Tally</h3>
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span>NC</span>
-                  <span className="font-bold">89</span>
-                </div>
-                <div className="w-full bg-white/20 h-2 rounded-full">
-                  <div className="bg-green-300 h-2 rounded-full" style={{ width: '34%' }} />
-                </div>
-
-                <div className="flex justify-between items-center mt-2">
-                  <span>UML</span>
-                  <span className="font-bold">78</span>
-                </div>
-                <div className="w-full bg-white/20 h-2 rounded-full">
-                  <div className="bg-red-300 h-2 rounded-full" style={{ width: '30%' }} />
+            <div className="bg-[#39304E] text-white rounded-[4px] p-6">
+              <h3 className="font-bold mb-4 text-sm opacity-80 border-b border-white/10 pb-2">SEAT TALLY</h3>
+              <div className="space-y-4">
+                <div className="space-y-1.5">
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="font-bold">NC</span>
+                    <span className="font-bold">89</span>
+                  </div>
+                  <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-green-500 h-full" style={{ width: '34%' }} />
+                  </div>
                 </div>
 
-                <div className="flex justify-between items-center mt-2">
-                  <span>Maoist</span>
-                  <span className="font-bold">32</span>
+                <div className="space-y-1.5">
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="font-bold">UML</span>
+                    <span className="font-bold">78</span>
+                  </div>
+                  <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-red-500 h-full" style={{ width: '30%' }} />
+                  </div>
                 </div>
-                <div className="w-full bg-white/20 h-2 rounded-full">
-                  <div className="bg-orange-300 h-2 rounded-full" style={{ width: '12%' }} />
+
+                <div className="space-y-1.5">
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="font-bold">Maoist</span>
+                    <span className="font-bold">32</span>
+                  </div>
+                  <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-orange-500 h-full" style={{ width: '12%' }} />
+                  </div>
                 </div>
               </div>
-              <div className="border-t border-white/20 mt-4 pt-4 text-center text-sm">
-                Total: 259 Seats
+              <div className="border-t border-white/10 mt-6 pt-4 text-center text-xs font-bold opacity-60">
+                TOTAL: 259 SEATS
               </div>
             </div>
           </div>

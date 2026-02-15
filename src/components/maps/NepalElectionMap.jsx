@@ -106,7 +106,7 @@ const NepalElectionMap = () => {
 
     if (!geoData) {
         return (
-            <div className="h-[600px] flex items-center justify-center bg-slate-50 rounded-xl border border-gray-200">
+            <div className="h-[600px] flex items-center justify-center bg-slate-50 rounded-[4px] border border-gray-200">
                 <div className="flex flex-col items-center">
                     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
                     <span className="text-gray-500 font-medium">Loading Map...</span>
@@ -116,7 +116,7 @@ const NepalElectionMap = () => {
     }
 
     return (
-        <div className="h-[600px] w-full bg-slate-100 rounded-xl overflow-hidden shadow-xl border border-gray-200 relative z-0">
+        <div className="h-[600px] w-full bg-slate-100 rounded-[4px] overflow-hidden border border-gray-200 relative z-0">
             <MapContainer
                 center={[28.3949, 84.1240]}
                 zoom={7}
@@ -142,7 +142,7 @@ const NepalElectionMap = () => {
                 />
             </MapContainer>
 
-            <div className="absolute bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg z-[1000] text-sm">
+            <div className="absolute bottom-4 right-4 bg-white p-4 rounded-[4px] border border-gray-200 z-[1000] text-sm">
                 <h4 className="font-bold mb-2">Legend</h4>
                 <div className="flex items-center gap-2 mb-1">
                     <span className="w-4 h-4 bg-[#3388ff] opacity-50 border border-black"></span>

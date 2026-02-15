@@ -55,14 +55,14 @@ const DistrictPage = () => {
                 <div className="text-6xl mb-4">🤷‍♂️</div>
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">District Not Found</h2>
                 <p className="text-gray-600 mb-6">The district "{id}" could not be found in our database.</p>
-                <Link to="/" className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Return Home</Link>
+                <Link to="/" className="px-6 py-2 bg-[#2260BF] text-white rounded-[4px] hover:bg-blue-700 transition font-bold">Return Home</Link>
             </div>
             <Footer />
         </div>
     );
 
     return (
-        <div className="flex flex-col min-h-screen bg-slate-50 font-sans">
+        <div className="flex flex-col min-h-screen bg-slate-50 font-funnel">
             <Header />
             <main className="flex-grow container mx-auto px-4 py-8 lg:py-12">
 
@@ -80,10 +80,10 @@ const DistrictPage = () => {
                                 {selectedDistrict?.name} <span className="text-slate-400 font-light">District</span>
                             </h1>
                             {selectedDistrict?.isFallback && (
-                                <span className="px-2 py-0.5 bg-amber-100 text-amber-700 text-[10px] font-bold rounded uppercase">Local Data</span>
+                                <span className="px-2 py-0.5 bg-amber-100 text-amber-700 text-[10px] font-bold rounded-[4px] uppercase">Local Data</span>
                             )}
                         </div>
-                        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full uppercase tracking-wider">
+                        <span className="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-[10px] font-bold rounded-[4px] uppercase tracking-wider border border-blue-100">
                             Province {selectedDistrict?.province}
                         </span>
                     </div>
@@ -96,7 +96,7 @@ const DistrictPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Sidebar / Info */}
                     <div className="space-y-6">
-                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                        <div className="bg-white p-6 rounded-[4px] border border-slate-100">
                             <h3 className="font-bold text-slate-800 mb-4 text-lg">District Overview</h3>
                             <ul className="space-y-4 text-sm">
                                 <li className="flex justify-between border-b border-slate-50 pb-2">
@@ -118,21 +118,21 @@ const DistrictPage = () => {
                             </ul>
                         </div>
 
-                        <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-6 rounded-2xl shadow-lg text-white">
+                        <div className="bg-[#39304E] p-6 rounded-[4px] text-white">
                             <h3 className="font-bold mb-2">District Navigation</h3>
-                            <p className="text-blue-100 text-sm leading-relaxed mb-4">
+                            <p className="text-blue-100/70 text-sm leading-relaxed mb-4">
                                 Use the toggle to switch between a clean Custom Vector map and an Interactive Satellite/Street map.
                             </p>
-                            <div className="flex bg-blue-900/40 p-1 rounded-xl">
+                            <div className="flex bg-black/20 p-1 rounded-[4px]">
                                 <button
                                     onClick={() => setMapMode('svg')}
-                                    className={`flex-1 py-2 px-3 rounded-lg text-xs font-bold transition-all ${mapMode === 'svg' ? 'bg-white text-blue-600 shadow-md' : 'text-blue-200 hover:text-white'}`}
+                                    className={`flex-1 py-2 px-3 rounded-[4px] text-xs font-bold transition-all ${mapMode === 'svg' ? 'bg-white text-[#39304E]' : 'text-blue-100 hover:text-white'}`}
                                 >
                                     Custom SVG
                                 </button>
                                 <button
                                     onClick={() => setMapMode('leaflet')}
-                                    className={`flex-1 py-2 px-3 rounded-lg text-xs font-bold transition-all ${mapMode === 'leaflet' ? 'bg-white text-blue-600 shadow-md' : 'text-blue-200 hover:text-white'}`}
+                                    className={`flex-1 py-2 px-3 rounded-[4px] text-xs font-bold transition-all ${mapMode === 'leaflet' ? 'bg-white text-[#39304E]' : 'text-blue-100 hover:text-white'}`}
                                 >
                                     Interactive
                                 </button>
@@ -147,16 +147,16 @@ const DistrictPage = () => {
                                 <span className="w-1.5 h-6 bg-red-600 rounded mr-3"></span>
                                 District Map & Sub-units
                             </h2>
-                            <div className="hidden md:flex bg-slate-200 p-1 rounded-lg">
+                            <div className="hidden md:flex bg-slate-200 p-1 rounded-[4px]">
                                 <button
                                     onClick={() => setMapMode('svg')}
-                                    className={`px-3 py-1 rounded-md text-[10px] uppercase font-bold transition-all ${mapMode === 'svg' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500'}`}
+                                    className={`px-3 py-1 rounded-[4px] text-[10px] uppercase font-bold transition-all ${mapMode === 'svg' ? 'bg-white text-[#2260BF]' : 'text-slate-500'}`}
                                 >
                                     SVG
                                 </button>
                                 <button
                                     onClick={() => setMapMode('leaflet')}
-                                    className={`px-3 py-1 rounded-md text-[10px] uppercase font-bold transition-all ${mapMode === 'leaflet' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500'}`}
+                                    className={`px-3 py-1 rounded-[4px] text-[10px] uppercase font-bold transition-all ${mapMode === 'leaflet' ? 'bg-white text-[#2260BF]' : 'text-slate-500'}`}
                                 >
                                     Leaflet
                                 </button>
@@ -182,10 +182,10 @@ const DistrictPage = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {[...Array(selectedDistrict?.totalConstituencies || 0)].map((_, i) => (
-                                <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                <div key={i} className="bg-white p-6 rounded-[4px] border border-slate-100">
                                     <div className="text-center mb-6">
                                         <h3 className="font-bold text-lg text-slate-800 mb-1">Constituency {i + 1}</h3>
-                                        <span className="text-xs text-green-600 font-bold bg-green-50 px-2 py-1 rounded-full">COUNTING PROGRESS: 100%</span>
+                                        <span className="text-[10px] text-green-600 font-bold bg-green-50 px-2 py-0.5 rounded-[4px] uppercase tracking-tighter border border-green-100">COUNTING PROGRESS: 100%</span>
                                     </div>
 
                                     <div className="flex justify-center mb-6">
@@ -193,26 +193,25 @@ const DistrictPage = () => {
                                             width={280}
                                             height={140}
                                             candidates={[
-                                                { name: 'Candidate A', votes: 15420, party: { name: 'CPN-UML', color: '#DC143C' } },
-                                                { name: 'Candidate B', votes: 12500, party: { name: 'NC', color: '#008000' } },
-                                                { name: 'Candidate C', votes: 8900, party: { name: 'RSP', color: '#003893' } }
+                                                { name: 'Surya Thapa', votes: 15420, party: { name: 'CPN-UML', color: '#DC143C' } },
+                                                { name: 'Gagan Thapa', votes: 12500, party: { name: 'NC', color: '#32CD32' } },
+                                                { name: 'Rabi Lamichhane', votes: 8900, party: { name: 'RSP', color: '#FF8C00' } }
                                             ]}
                                         />
                                     </div>
 
-                                    <div className="space-y-2">
-                                        <div className="flex items-center justify-between text-xs font-semibold uppercase text-slate-400 mb-2">
+                                    <div className="space-y-3">
+                                        <div className="flex items-center justify-between text-[10px] font-bold uppercase text-slate-400 mb-1 tracking-widest px-1">
                                             <span>Candidate</span>
                                             <span>Votes</span>
                                         </div>
-                                        {/* Mock List Items - in real app, map based on data */}
-                                        <div className="flex items-center justify-between p-2 rounded bg-slate-50 border-l-4 border-red-600">
-                                            <span className="font-medium text-slate-700">Surya Thapa (UML)</span>
-                                            <span className="font-bold">15,420</span>
+                                        <div className="flex items-center justify-between p-3 rounded-[4px] bg-slate-50 border-l-4 border-red-600">
+                                            <span className="font-bold text-sm text-slate-700">Surya Thapa (UML)</span>
+                                            <span className="font-bold text-slate-900 text-sm">15,420</span>
                                         </div>
-                                        <div className="flex items-center justify-between p-2 rounded bg-white">
-                                            <span className="font-medium text-slate-600">Gagan Thapa (NC)</span>
-                                            <span className="font-bold text-slate-500">12,500</span>
+                                        <div className="flex items-center justify-between p-3 rounded-[4px] bg-white border border-slate-100">
+                                            <span className="font-bold text-sm text-slate-600">Gagan Thapa (NC)</span>
+                                            <span className="font-bold text-slate-500 text-sm">12,500</span>
                                         </div>
                                     </div>
                                 </div>

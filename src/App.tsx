@@ -41,7 +41,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App font-sans text-gray-900">
+      <div className="App text-gray-900 min-h-screen">
         <Routes>
 
           <Route path="/" element={<HomePage />} />

@@ -5,6 +5,10 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '1rem',
+    },
     extend: {
       colors: {
         nepalBlue: "#003893",
@@ -12,7 +16,11 @@ export default {
         primary: '#003893',
         secondary: '#DC143C',
         accent: '#FFD700',
-      }
+      },
+      fontFamily: {
+        sans: ['Funnel Sans', 'Inter', 'sans-serif'],
+        nepali: ['Mukta', 'Inter', 'sans-serif'],
+      },
     },
   },
   plugins: [],
