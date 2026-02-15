@@ -7,15 +7,15 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+        <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
             <div className="container mx-auto px-4 py-3 flex justify-between items-center">
 
                 {/* Logo Section */}
                 <div className="flex items-center space-x-4">
                     <Link to="/" className="text-2xl font-bold flex items-center group">
-                        <span className="text-nepalRed mr-2 text-3xl group-hover:scale-110 transition-transform">🇳🇵</span>
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-nepalBlue to-nepalRed">
-                            Nepal Election
+                        <img src="/flag_of_nepal.gif" alt="Flag of Nepal" className="w-8 h-8" />
+                        <span className="text-nepalBlue font-nepali">
+                            नेपाल निर्वाचन
                         </span>
                     </Link>
                     {!isOnline && (
