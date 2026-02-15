@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import { apiGet } from '../services/api';
+import { setSelectedYear } from '../store/electionSlice';
 
 const CandidatePage = () => {
     const { id } = useParams();
+    const dispatch = useDispatch();
     const [candidate, setCandidate] = useState(null);
     const [loading, setLoading] = useState(true);
+    const selectedYear = useSelector(state => state.election.selectedYear);
 
     useEffect(() => {
         const fetchCandidate = async () => {
@@ -18,7 +22,8 @@ const CandidatePage = () => {
                     setCandidate(data);
                 } else {
                     // List all (pagination needed in real app)
-                    const data = await apiGet(`/candidates`);
+                    // Passing electionYear query param
+                    const data = await apiGet(`/candidates?electionYear=${selectedYear}`);
                     setCandidate(data); // If list
                 }
             } catch (error) {
@@ -29,7 +34,7 @@ const CandidatePage = () => {
         };
 
         fetchCandidate();
-    }, [id]);
+    }, [id, selectedYear]);
 
     if (loading) return <div className="p-10 text-center">Loading...</div>;
 
@@ -39,7 +44,17 @@ const CandidatePage = () => {
             <div className="flex flex-col min-h-screen bg-gray-50">
                 <Header />
                 <main className="flex-grow container mx-auto px-4 py-8">
-                    <h1 className="text-3xl font-bold mb-6">Candidates</h1>
+                    <div className="flex justify-between items-center mb-6">
+                        <h1 className="text-3xl font-bold">Candidates</h1>
+                        <select
+                            value={selectedYear}
+                            onChange={(e) => dispatch(setSelectedYear(parseInt(e.target.value)))}
+                            className="bg-white border border-gray-300 rounded px-4 py-2"
+                        >
+                            <option value={2084}>Election 2084</option>
+                            <option value={2022}>Election 2022</option>
+                        </select>
+                    </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {candidate.map(c => (
                             <div key={c._id} className="bg-white p-4 rounded shadow text-center">
@@ -98,8 +113,8 @@ const CandidatePage = () => {
                                 <div>
                                     <p className="text-gray-500 text-sm">Result</p>
                                     <span className={`inline-block px-3 py-1 rounded text-sm font-bold ${candidate.status === 'elected' ? 'bg-green-100 text-green-800' :
-                                            candidate.status === 'leading' ? 'bg-blue-100 text-blue-800' :
-                                                candidate.status === 'lost' ? 'bg-red-100 text-red-800' : 'bg-gray-100 text-gray-800'
+                                        candidate.status === 'leading' ? 'bg-blue-100 text-blue-800' :
+                                            candidate.status === 'lost' ? 'bg-red-100 text-red-800' : 'bg-gray-100 text-gray-800'
                                         }`}>
                                         {candidate.status?.toUpperCase()}
                                     </span>

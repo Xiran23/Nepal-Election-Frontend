@@ -4,28 +4,38 @@ import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import CustomNepalMap from '../components/maps/CustomNepalMap';
 import NepalElectionMap from '../components/maps/NepalElectionMap';
-import WikipediaSemiCircle from '../components/election/WikipediaSemiCircle';
-import { fetchLiveResults, fetchNationalSummary } from '../store/electionSlice';
+import ParliamentChart from '../components/election/ParliamentChart';
+import { fetchLiveResults, fetchNationalSummary, setSelectedYear } from '../store/electionSlice';
 import { getPartyColor } from '../utils/mapHelpers';
 
 const HomePage = () => {
   const [showCustomMap, setShowCustomMap] = React.useState(true);
   const dispatch = useDispatch();
-  const { liveResults, nationalSummary } = useSelector(state => state.election);
+  const { liveResults, nationalSummary, selectedYear } = useSelector(state => state.election);
 
   useEffect(() => {
-    dispatch(fetchLiveResults());
-    dispatch(fetchNationalSummary());
-  }, [dispatch]);
+    dispatch(fetchLiveResults(selectedYear));
+    dispatch(fetchNationalSummary(selectedYear));
+  }, [dispatch, selectedYear]);
 
   // Transform partyTally to format expected by WikipediaSemiCircle
   const nationalResult = useMemo(() => {
+    // Check if nationalSummary has parties object (from our new backend logic)
+    if (nationalSummary?.parties && Object.keys(nationalSummary.parties).length > 0) {
+      return Object.entries(nationalSummary.parties).map(([name, data]) => ({
+        name,
+        votes: data.seats || 0, // In semi-circle we usually show seats
+        party: { name, color: data.color || getPartyColor(name) }
+      })).sort((a, b) => b.votes - a.votes);
+    }
+
+    // Fallback or old format
     if (!nationalSummary?.partyTally?.length) return [
-      { name: 'Nepali Congress', votes: 4523120, party: { name: 'NC', color: '#32CD32' } },
-      { name: 'CPN-UML', votes: 3987650, party: { name: 'UML', color: '#DC143C' } },
-      { name: 'CPN-Maoist', votes: 1876540, party: { name: 'Maoist', color: '#8B0000' } },
-      { name: 'RSP', votes: 1234560, party: { name: 'RSP', color: '#FF8C00' } },
-      { name: 'PSP-N', votes: 987650, party: { name: 'PSP-N', color: '#4169E1' } },
+      { name: 'Nepali Congress', votes: 89, party: { name: 'NC', color: '#32CD32' } },
+      { name: 'CPN-UML', votes: 78, party: { name: 'UML', color: '#DC143C' } },
+      { name: 'CPN-Maoist', votes: 32, party: { name: 'Maoist', color: '#8B0000' } },
+      { name: 'RSP', votes: 21, party: { name: 'RSP', color: '#FF8C00' } },
+      { name: 'Others', votes: 55, party: { name: 'Others', color: '#94A3B8' } },
     ];
     return nationalSummary.partyTally.map(p => ({
       name: p.partyName || p.party,
@@ -39,16 +49,35 @@ const HomePage = () => {
       <Header />
 
       <main className="flex-grow container mx-auto px-4 py-8">
+        {/* Year Selector */}
+        <div className="flex justify-center mb-6">
+          <div className="flex items-center space-x-4 bg-white px-6 py-3 rounded-full shadow-md border border-gray-100">
+            <span className="text-gray-500 font-medium">Select Year:</span>
+            {[2084, 2022].map(year => (
+              <button
+                key={year}
+                onClick={() => dispatch(setSelectedYear(year))}
+                className={`px-6 py-2 rounded-full font-bold transition-all ${selectedYear === year
+                  ? 'bg-blue-600 text-white shadow-lg scale-105'
+                  : 'text-gray-600 hover:bg-gray-100'
+                  }`}
+              >
+                {year === 2084 ? '2084 (Live)' : '2022 (Past)'}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Hero Section */}
         <div className="text-center mb-8">
           <span className="inline-block px-4 py-1.5 bg-red-100 text-red-800 rounded-full text-sm font-bold mb-4">
-            🇳🇵 संघीय संसद् निर्वाचन २०८४
+            🇳🇵 {selectedYear === 2084 ? 'संघीय संसद् निर्वाचन २०८४' : 'आम निर्वाचन २०७९'}
           </span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-            Federal Parliament Election <span className="text-red-600">2084</span>
+            Federal Parliament Election <span className="text-red-600">{selectedYear}</span>
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Real-time results from all 77 districts and 165 constituencies.
+            {selectedYear === 2084 ? 'Real-time results from all 77 districts.' : 'Historical data from the 2022 general elections.'}
             Hover over districts to see detailed information.
           </p>
         </div>
@@ -104,7 +133,7 @@ const HomePage = () => {
                 </button>
               </div>
             </div>
-            {showCustomMap ? <CustomNepalMap /> : <NepalElectionMap />}
+            {showCustomMap ? <CustomNepalMap year={selectedYear} /> : <NepalElectionMap year={selectedYear} />}
           </div>
 
           {/* Sidebar - Takes 1 column */}
@@ -116,13 +145,12 @@ const HomePage = () => {
                 National Result
               </h2>
 
-              {/* Wikipedia-style semi-circle for national result */}
-              <WikipediaSemiCircle
-                candidates={nationalResult}
-                totalVotes={nationalResult.reduce((sum, c) => sum + c.votes, 0)}
-                width={300}
-                height={150}
-                showPercentages={true}
+              {/* Parliament Chart (Hemicycle with 275 dots) */}
+              <ParliamentChart
+                data={nationalResult}
+                totalSeats={275}
+                width={340}
+                height={170}
               />
             </div>
 
