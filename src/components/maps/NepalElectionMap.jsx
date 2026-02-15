@@ -7,7 +7,7 @@ import { fetchDistrictElectionData } from '../../store/electionSlice';
 import { getPartyColor } from '../../utils/mapHelpers';
 import constituencyData from '../../data/nepal-constituencies.json';
 
-const NepalElectionMap = () => {
+const NepalElectionMap = ({ year = 2084 }) => {
     const [geoData, setGeoData] = useState(null);
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const NepalElectionMap = () => {
                     const districtName = feature?.properties?.DIST_EN || feature?.properties?.DISTRICT;
                     if (districtName) {
                         const districtId = districtName.toLowerCase().replace(/\s+/g, '_');
-                        dispatch(fetchDistrictElectionData(districtId));
+                        dispatch(fetchDistrictElectionData({ districtId, year }));
                     }
                 });
             })
@@ -42,7 +42,7 @@ const NepalElectionMap = () => {
                 console.error("Error loading map data:", err);
                 setError(err.message);
             });
-    }, [dispatch]);
+    }, [dispatch, year]);
 
     const onEachDistrict = (feature, layer) => {
         const districtName = feature?.properties?.DIST_EN || feature?.properties?.DISTRICT || 'Unknown';

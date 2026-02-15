@@ -16,10 +16,6 @@ const ResultSemiCircle = ({ candidates = [], totalVotes = 100, width = 400, heig
         const g = svg.append("g")
             .attr("transform", `translate(${width / 2},${height})`);
 
-        // Calculate angles
-        // Simple logic: mapping vote % to angle on semi-circle (-90 to 90 degrees)
-        // Actually, normally this chart shows seats. Here it shares votes.
-
         const pie = d3.pie()
             .startAngle(-Math.PI / 2)
             .endAngle(Math.PI / 2)
@@ -38,15 +34,12 @@ const ResultSemiCircle = ({ candidates = [], totalVotes = 100, width = 400, heig
 
         arcs.append("path")
             .attr("d", arc)
-            .attr("fill", d => d.data.party?.color || '#ccc')
+            .attr("fill", d => d.data.party?.color || d.data.color || '#ccc')
             .attr("stroke", "white")
             .style("stroke-width", "2px");
 
-        // Add dots or labels if needed
-        // For simplicity, we just show the sectors with tooltips
-
         arcs.append("title")
-            .text(d => `${d.data.name} (${d.data.party?.name}): ${d.data.votes} votes`);
+            .text(d => `${d.data.name} (${d.data.party?.name || 'N/A'}): ${d.data.votes} votes`);
 
     }, [candidates, totalVotes, width, height]);
 
@@ -58,7 +51,7 @@ const ResultSemiCircle = ({ candidates = [], totalVotes = 100, width = 400, heig
                     <div key={i} className="flex items-center">
                         <span
                             className="w-3 h-3 rounded-full mr-2"
-                            style={{ backgroundColor: cand.party?.color || '#ccc' }}
+                            style={{ backgroundColor: cand.party?.color || cand.color || '#ccc' }}
                         ></span>
                         <span>{cand.name}: <span className="font-bold">{cand.votes}</span></span>
                     </div>

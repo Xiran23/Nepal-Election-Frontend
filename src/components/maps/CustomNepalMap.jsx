@@ -204,7 +204,7 @@ const DistrictPath = React.memo(({
     );
 });
 
-const CustomNepalMap = () => {
+const CustomNepalMap = ({ year = 2084 }) => {
     const [hoveredDistrict, setHoveredDistrict] = useState(null);
     const [mapLevel, setMapLevel] = useState('national'); // national, province, district, municipality
     const [selectedProvince, setSelectedProvince] = useState('');
@@ -305,12 +305,12 @@ const CustomNepalMap = () => {
                     const name = feature?.properties?.DIST_EN || feature?.properties?.DISTRICT || feature?.properties?.NAME;
                     if (name) {
                         const id = name.toLowerCase().replace(/\s+/g, '_');
-                        dispatch(fetchDistrictElectionData(id));
+                        dispatch(fetchDistrictElectionData({ districtId: id, year }));
                     }
                 } catch (e) { }
             });
         }
-    }, [mapData, dispatch, isOnline]);
+    }, [mapData, dispatch, isOnline, year]);
 
     // Projection calculation
     const { projectionFn } = useMemo(() => {

@@ -5,7 +5,7 @@ import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import WikipediaSemiCircle from '../components/election/WikipediaSemiCircle';
 import CandidateCard from '../components/election/CandidateCard';
-import { fetchConstituencyResults } from '../store/electionSlice';
+import { fetchConstituencyResults, setSelectedYear } from '../store/electionSlice';
 import { fetchCandidatesByConstituency } from '../store/candidateSlice';
 import { formatVoteCount, calculateMargin } from '../utils/electionHelpers';
 
@@ -13,17 +13,16 @@ const ConstituencyPage = () => {
   const { districtId, constituencyNo } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  
+
   const [activeTab, setActiveTab] = useState('results');
-  const [selectedYear, setSelectedYear] = useState('2084');
-  
-  const { constituencyData, loading } = useSelector(state => state.election);
+
+  const { constituencyData, loading, selectedYear } = useSelector(state => state.election);
   const { constituencyCandidates } = useSelector(state => state.candidate);
   const isOnline = useSelector(state => state.offline.isOnline);
 
   useEffect(() => {
-    dispatch(fetchConstituencyResults({ districtId, constituencyNo }));
-    dispatch(fetchCandidatesByConstituency({ districtId, constituencyNo }));
+    dispatch(fetchConstituencyResults({ districtId, constituencyNo, year: selectedYear }));
+    dispatch(fetchCandidatesByConstituency({ districtId, constituencyNo, electionYear: selectedYear }));
   }, [districtId, constituencyNo, dispatch, selectedYear]);
 
   const handleCandidateClick = (candidate) => {
@@ -37,7 +36,7 @@ const ConstituencyPage = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <Header />
-      
+
       <main className="flex-grow container mx-auto px-4 py-8">
         {/* Breadcrumb */}
         <nav className="flex items-center text-sm text-gray-500 mb-6">
@@ -67,16 +66,15 @@ const ConstituencyPage = () => {
                 </span>
               </div>
             </div>
-            
+
             {/* Year Selector */}
             <select
               value={selectedYear}
-              onChange={(e) => setSelectedYear(e.target.value)}
+              onChange={(e) => dispatch(setSelectedYear(parseInt(e.target.value)))}
               className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <option value="2084">Election 2084</option>
-              <option value="2079">Election 2079</option>
-              <option value="2074">Election 2074</option>
+              <option value={2084}>Election 2084</option>
+              <option value={2022}>Election 2022</option>
             </select>
           </div>
 
@@ -114,31 +112,28 @@ const ConstituencyPage = () => {
           <div className="flex">
             <button
               onClick={() => setActiveTab('results')}
-              className={`px-6 py-4 font-medium text-sm transition-colors relative ${
-                activeTab === 'results'
-                  ? 'text-blue-600 border-b-2 border-blue-600'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
+              className={`px-6 py-4 font-medium text-sm transition-colors relative ${activeTab === 'results'
+                ? 'text-blue-600 border-b-2 border-blue-600'
+                : 'text-gray-500 hover:text-gray-700'
+                }`}
             >
               Election Results
             </button>
             <button
               onClick={() => setActiveTab('candidates')}
-              className={`px-6 py-4 font-medium text-sm transition-colors relative ${
-                activeTab === 'candidates'
-                  ? 'text-blue-600 border-b-2 border-blue-600'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
+              className={`px-6 py-4 font-medium text-sm transition-colors relative ${activeTab === 'candidates'
+                ? 'text-blue-600 border-b-2 border-blue-600'
+                : 'text-gray-500 hover:text-gray-700'
+                }`}
             >
               Candidates
             </button>
             <button
               onClick={() => setActiveTab('history')}
-              className={`px-6 py-4 font-medium text-sm transition-colors relative ${
-                activeTab === 'history'
-                  ? 'text-blue-600 border-b-2 border-blue-600'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
+              className={`px-6 py-4 font-medium text-sm transition-colors relative ${activeTab === 'history'
+                ? 'text-blue-600 border-b-2 border-blue-600'
+                : 'text-gray-500 hover:text-gray-700'
+                }`}
             >
               Election History
             </button>
@@ -185,20 +180,22 @@ const ConstituencyPage = () => {
                   )}
 
                   {/* Wikipedia Style Chart */}
-                  <WikipediaSemiCircle
-                    candidates={constituencyCandidates?.map(c => ({
-                      name: c.name,
-                      votes: c.votes || 0,
-                      party: {
-                        name: c.party?.name,
-                        color: c.party?.color
-                      }
-                    })) || []}
-                    totalVotes={totalVotes}
-                    width={600}
-                    height={300}
-                    onCandidateClick={handleCandidateClick}
-                  />
+                  <div className="flex justify-center my-8">
+                    <WikipediaSemiCircle
+                      candidates={constituencyCandidates?.map(c => ({
+                        name: c.name,
+                        votes: c.votes || 0,
+                        party: {
+                          name: c.party?.name,
+                          color: c.party?.color
+                        }
+                      })) || []}
+                      totalVotes={totalVotes}
+                      width={600}
+                      height={300}
+                      onCandidateClick={handleCandidateClick}
+                    />
+                  </div>
                 </div>
               )}
 
@@ -231,8 +228,8 @@ const ConstituencyPage = () => {
                         </button>
                       </div>
                       <p className="text-sm text-gray-500 mt-1">
-                        Winner: {year === 2079 ? 'Sher Bahadur Deuba' : 
-                                year === 2074 ? 'Khadga Prasad Oli' : 'Sushil Koirala'}
+                        Winner: {year === 2079 ? 'Sher Bahadur Deuba' :
+                          year === 2074 ? 'Khadga Prasad Oli' : 'Sushil Koirala'}
                       </p>
                     </div>
                   ))}

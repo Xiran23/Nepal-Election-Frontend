@@ -4,13 +4,14 @@ import { apiGet } from '../services/api';
 // Async thunks (named exports)
 export const fetchCandidates = createAsyncThunk(
   'candidate/fetchCandidates',
-  async ({ district, party, page = 1 } = {}, { rejectWithValue }) => {
+  async ({ district, party, electionYear, page = 1 } = {}, { rejectWithValue }) => {
     try {
       const params = new URLSearchParams();
       if (district) params.append('district', district);
       if (party) params.append('party', party);
+      if (electionYear) params.append('electionYear', electionYear);
       if (page) params.append('page', page);
-      
+
       const response = await apiGet(`/candidates?${params.toString()}`);
       return response;
     } catch (error) {
@@ -33,9 +34,12 @@ export const fetchCandidateById = createAsyncThunk(
 
 export const fetchCandidatesByConstituency = createAsyncThunk(
   'candidate/fetchByConstituency',
-  async ({ districtId, constituencyNo }, { rejectWithValue }) => {
+  async ({ districtId, constituencyNo, electionYear }, { rejectWithValue }) => {
     try {
-      const response = await apiGet(`/candidates/constituency/${districtId}/${constituencyNo}`);
+      const url = electionYear
+        ? `/candidates/constituency/${districtId}/${constituencyNo}?electionYear=${electionYear}`
+        : `/candidates/constituency/${districtId}/${constituencyNo}`;
+      const response = await apiGet(url);
       return response;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -71,36 +75,36 @@ const candidateSlice = createSlice({
     clearSelectedCandidate: (state) => {
       state.selectedCandidate = null;
     },
-    
+
     setCandidateFilters: (state, action) => {
       state.filters = { ...state.filters, ...action.payload };
     },
-    
+
     clearCandidateFilters: (state) => {
       state.filters = initialState.filters;
     },
-    
+
     updateCandidateVotes: (state, action) => {
       const { id, votes, status } = action.payload;
-      
+
       const candidate = state.candidates.find(c => c.id === id);
       if (candidate) {
         candidate.votes = votes;
         candidate.status = status;
       }
-      
+
       const constituencyCandidate = state.constituencyCandidates.find(c => c.id === id);
       if (constituencyCandidate) {
         constituencyCandidate.votes = votes;
         constituencyCandidate.status = status;
       }
-      
+
       if (state.selectedCandidate?.id === id) {
         state.selectedCandidate.votes = votes;
         state.selectedCandidate.status = status;
       }
     },
-    
+
     sortCandidates: (state, action) => {
       const { field, order } = action.payload;
       state.candidates.sort((a, b) => {
@@ -134,7 +138,7 @@ const candidateSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      
+
       .addCase(fetchCandidateById.pending, (state) => {
         state.loading = true;
       })
@@ -146,7 +150,7 @@ const candidateSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      
+
       .addCase(fetchCandidatesByConstituency.pending, (state) => {
         state.loading = true;
       })

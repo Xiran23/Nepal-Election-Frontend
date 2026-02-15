@@ -7,19 +7,22 @@ import ResultSemiCircle from '../components/election/ResultSemiCircle';
 import DistrictMap from '../components/maps/DistrictMap';
 import DistrictCustomMap from '../components/maps/DistrictCustomMap';
 import { fetchDistrictDetails } from '../store/districtSlice';
+import { fetchDistrictElectionData, setSelectedYear } from '../store/electionSlice';
 import constituencyData from '../data/nepal-constituencies.json';
 
 const DistrictPage = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const { selectedDistrict: apiDistrict, status } = useSelector((state) => state.district);
+    const { selectedDistrict: apiDistrict, status: districtStatus } = useSelector((state) => state.district);
+    const { districtResults, selectedYear, status: electionStatus } = useSelector((state) => state.election);
     const [mapMode, setMapMode] = useState('svg'); // 'svg' or 'leaflet'
 
     useEffect(() => {
         if (id) {
             dispatch(fetchDistrictDetails(id));
+            dispatch(fetchDistrictElectionData({ districtId: id, year: selectedYear }));
         }
-    }, [id, dispatch]);
+    }, [id, dispatch, selectedYear]);
 
     // Fallback logic: If API doesn't have district info, use local JSON
     const localDistrict = constituencyData.districts[id?.toLowerCase()];
@@ -87,9 +90,19 @@ const DistrictPage = () => {
                             Province {selectedDistrict?.province}
                         </span>
                     </div>
-                    <div className="mt-4 md:mt-0 text-right">
-                        <div className="text-sm text-slate-500 font-medium uppercase tracking-wide">Total Registered Voters</div>
-                        <div className="text-2xl font-bold text-slate-800">{selectedDistrict?.demographics?.voters?.total?.toLocaleString() || 'N/A'}</div>
+                    <div className="mt-4 md:mt-0 flex flex-col items-end gap-3">
+                        <select
+                            value={selectedYear}
+                            onChange={(e) => dispatch(setSelectedYear(parseInt(e.target.value)))}
+                            className="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                            <option value={2084}>Election 2084 (Live)</option>
+                            <option value={2022}>Election 2022 (Past)</option>
+                        </select>
+                        <div className="text-right">
+                            <div className="text-sm text-slate-500 font-medium uppercase tracking-wide">Total Registered Voters</div>
+                            <div className="text-2xl font-bold text-slate-800">{selectedDistrict?.demographics?.voters?.total?.toLocaleString() || 'N/A'}</div>
+                        </div>
                     </div>
                 </div>
 
@@ -181,42 +194,55 @@ const DistrictPage = () => {
                         </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {[...Array(selectedDistrict?.totalConstituencies || 0)].map((_, i) => (
-                                <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                                    <div className="text-center mb-6">
-                                        <h3 className="font-bold text-lg text-slate-800 mb-1">Constituency {i + 1}</h3>
-                                        <span className="text-xs text-green-600 font-bold bg-green-50 px-2 py-1 rounded-full">COUNTING PROGRESS: 100%</span>
-                                    </div>
+                            {(districtResults[id]?.constituencies || [...Array(selectedDistrict?.totalConstituencies || 0)]).map((res, i) => {
+                                const constituencyNo = res?.constituency || (i + 1);
+                                const candidates = res?.candidates?.map(c => ({
+                                    name: c.candidate?.name || 'Unknown',
+                                    votes: c.votes || 0,
+                                    party: {
+                                        name: c.candidate?.party?.name || 'Independent',
+                                        color: c.candidate?.party?.color || '#94A3B8'
+                                    }
+                                })).sort((a, b) => b.votes - a.votes).slice(0, 5) || [];
 
-                                    <div className="flex justify-center mb-6">
-                                        <ResultSemiCircle
-                                            width={280}
-                                            height={140}
-                                            candidates={[
-                                                { name: 'Candidate A', votes: 15420, party: { name: 'CPN-UML', color: '#DC143C' } },
-                                                { name: 'Candidate B', votes: 12500, party: { name: 'NC', color: '#008000' } },
-                                                { name: 'Candidate C', votes: 8900, party: { name: 'RSP', color: '#003893' } }
-                                            ]}
-                                        />
-                                    </div>
+                                return (
+                                    <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                        <div className="text-center mb-6">
+                                            <h3 className="font-bold text-lg text-slate-800 mb-1">Constituency {constituencyNo}</h3>
+                                            <span className="text-xs text-green-600 font-bold bg-green-50 px-2 py-1 rounded-full">
+                                                {res ? 'RESULT FINAL' : 'LOADING DATA...'}
+                                            </span>
+                                        </div>
 
-                                    <div className="space-y-2">
-                                        <div className="flex items-center justify-between text-xs font-semibold uppercase text-slate-400 mb-2">
-                                            <span>Candidate</span>
-                                            <span>Votes</span>
+                                        <div className="flex justify-center mb-6">
+                                            <ResultSemiCircle
+                                                width={280}
+                                                height={140}
+                                                candidates={candidates.length > 0 ? candidates : [
+                                                    { name: 'Pending', votes: 1, party: { name: 'N/A', color: '#E2E8F0' } }
+                                                ]}
+                                            />
                                         </div>
-                                        {/* Mock List Items - in real app, map based on data */}
-                                        <div className="flex items-center justify-between p-2 rounded bg-slate-50 border-l-4 border-red-600">
-                                            <span className="font-medium text-slate-700">Surya Thapa (UML)</span>
-                                            <span className="font-bold">15,420</span>
-                                        </div>
-                                        <div className="flex items-center justify-between p-2 rounded bg-white">
-                                            <span className="font-medium text-slate-600">Gagan Thapa (NC)</span>
-                                            <span className="font-bold text-slate-500">12,500</span>
+
+                                        <div className="space-y-2">
+                                            <div className="flex items-center justify-between text-xs font-semibold uppercase text-slate-400 mb-2">
+                                                <span>Candidate</span>
+                                                <span>Votes</span>
+                                            </div>
+                                            {candidates.length > 0 ? (
+                                                candidates.map((c, idx) => (
+                                                    <div key={idx} className={`flex items-center justify-between p-2 rounded ${idx === 0 ? 'bg-slate-50 border-l-4' : 'bg-white'}`} style={{ borderLeftColor: idx === 0 ? c.party.color : 'transparent' }}>
+                                                        <span className="font-medium text-slate-700">{c.name} ({c.party.name})</span>
+                                                        <span className="font-bold">{c.votes.toLocaleString()}</span>
+                                                    </div>
+                                                ))
+                                            ) : (
+                                                <div className="text-center py-4 text-slate-400 italic text-sm">No data available for this year</div>
+                                            )}
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 </div>

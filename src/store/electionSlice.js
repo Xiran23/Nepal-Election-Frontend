@@ -5,9 +5,10 @@ import { getPartyColor } from '../utils/mapHelpers';
 // Async thunks
 export const fetchLiveResults = createAsyncThunk(
   'election/fetchLiveResults',
-  async (_, { rejectWithValue }) => {
+  async (year, { rejectWithValue }) => {
     try {
-      const response = await apiGet('/results/live');
+      const url = year ? `/results/live?electionYear=${year}` : '/results/live';
+      const response = await apiGet(url);
       return response;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -17,9 +18,10 @@ export const fetchLiveResults = createAsyncThunk(
 
 export const fetchDistrictElectionData = createAsyncThunk(
   'election/fetchDistrictData',
-  async (districtId, { rejectWithValue }) => {
+  async ({ districtId, year }, { rejectWithValue }) => {
     try {
-      const response = await apiGet(`/districts/${districtId}/election-results`);
+      const url = year ? `/districts/${districtId}/election-results?electionYear=${year}` : `/districts/${districtId}/election-results`;
+      const response = await apiGet(url);
       return { districtId, data: response };
     } catch (error) {
       return rejectWithValue(error.message);
@@ -29,9 +31,12 @@ export const fetchDistrictElectionData = createAsyncThunk(
 
 export const fetchConstituencyResults = createAsyncThunk(
   'election/fetchConstituencyResults',
-  async ({ districtId, constituencyNo }, { rejectWithValue }) => {
+  async ({ districtId, constituencyNo, year }, { rejectWithValue }) => {
     try {
-      const response = await apiGet(`/constituencies/${districtId}/${constituencyNo}`);
+      const url = year
+        ? `/constituencies/${districtId}/${constituencyNo}?electionYear=${year}`
+        : `/constituencies/${districtId}/${constituencyNo}`;
+      const response = await apiGet(url);
       return response;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -41,9 +46,10 @@ export const fetchConstituencyResults = createAsyncThunk(
 
 export const fetchNationalSummary = createAsyncThunk(
   'election/fetchNationalSummary',
-  async (_, { rejectWithValue }) => {
+  async (year, { rejectWithValue }) => {
     try {
-      const response = await apiGet('/results/national-summary');
+      const url = year ? `/results/national-summary?electionYear=${year}` : '/results/national-summary';
+      const response = await apiGet(url);
       return response;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -96,6 +102,7 @@ const initialState = {
   },
   elections: [],
   currentElection: null,
+  selectedYear: 2084,
   status: 'idle',
   error: null,
   loading: false
@@ -105,6 +112,9 @@ const electionSlice = createSlice({
   name: 'election',
   initialState,
   reducers: {
+    setSelectedYear: (state, action) => {
+      state.selectedYear = action.payload;
+    },
     updateLocalResult: (state, action) => {
       const { districtId, constituencyNo, data } = action.payload;
       if (!state.districtResults[districtId]) {
@@ -114,7 +124,7 @@ const electionSlice = createSlice({
         state.districtResults[districtId][constituencyNo] = {};
       }
       state.districtResults[districtId][constituencyNo] = data;
-      
+
       // Update national summary based on local data
       if (data.winner) {
         const party = data.winner.party;
@@ -126,17 +136,17 @@ const electionSlice = createSlice({
         state.nationalSummary.counted += 1;
       }
     },
-    
+
     clearElectionData: (state) => {
       state.districtResults = {};
       state.constituencyData = null;
       state.nationalSummary = initialState.nationalSummary;
     },
-    
+
     updateVoterTurnout: (state, action) => {
       state.nationalSummary.voterTurnout = action.payload;
     },
-    
+
     setLastUpdated: (state, action) => {
       state.nationalSummary.lastUpdated = action.payload;
     }
@@ -159,7 +169,7 @@ const electionSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      
+
       // Fetch District Election Data
       .addCase(fetchDistrictElectionData.pending, (state) => {
         state.loading = true;
@@ -168,7 +178,7 @@ const electionSlice = createSlice({
         state.loading = false;
         const { districtId, data } = action.payload;
         state.districtResults[districtId] = data;
-        
+
         // Update party colors in data
         if (data.constituencies) {
           data.constituencies.forEach(constituency => {
@@ -182,7 +192,7 @@ const electionSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      
+
       // Fetch Constituency Results
       .addCase(fetchConstituencyResults.pending, (state) => {
         state.loading = true;
@@ -195,17 +205,17 @@ const electionSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      
+
       // Fetch National Summary
       .addCase(fetchNationalSummary.fulfilled, (state, action) => {
         state.nationalSummary = action.payload;
       })
-      
+
       // Fetch Elections
       .addCase(fetchElections.fulfilled, (state, action) => {
         state.elections = action.payload;
       })
-      
+
       // Fetch Current Election
       .addCase(fetchCurrentElection.fulfilled, (state, action) => {
         state.currentElection = action.payload;
@@ -213,11 +223,12 @@ const electionSlice = createSlice({
   }
 });
 
-export const { 
-  updateLocalResult, 
-  clearElectionData, 
-  updateVoterTurnout, 
-  setLastUpdated 
+export const {
+  setSelectedYear,
+  updateLocalResult,
+  clearElectionData,
+  updateVoterTurnout,
+  setLastUpdated
 } = electionSlice.actions;
 
 export default electionSlice.reducer;
