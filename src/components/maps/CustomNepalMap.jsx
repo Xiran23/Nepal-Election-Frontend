@@ -31,13 +31,13 @@ const MapFilterHeader = ({
 }) => {
     return (
         <div className="flex flex-wrap items-center gap-3 p-4 bg-slate-50 border-b border-slate-200">
-            <div className="flex bg-white rounded-lg border border-slate-200 p-1 shadow-sm">
+            <div className="flex bg-white rounded-[4px] border border-slate-200 p-1">
                 {['national', 'province', 'district', 'municipality'].map((level) => (
                     <button
                         key={level}
                         onClick={() => setMapLevel(level)}
-                        className={`px-3 py-1.5 text-xs font-bold rounded-md transition-all ${mapLevel === level
-                            ? 'bg-nepalBlue text-white shadow-sm'
+                        className={`px-3 py-1.5 text-xs font-bold rounded-[4px] transition-all ${mapLevel === level
+                            ? 'bg-[#2260BF] text-white'
                             : 'text-slate-500 hover:bg-slate-50'
                             }`}
                     >
@@ -72,7 +72,7 @@ const MapFilterHeader = ({
                 <select
                     value={selectedMunicipality}
                     onChange={(e) => setSelectedMunicipality(e.target.value)}
-                    className="px-3 py-2 text-xs font-semibold bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="px-3 py-2 text-xs font-semibold bg-white border border-slate-200 rounded-[4px] focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                     <option value="">Select Municipality</option>
                     {municipalities.map(m => <option key={m} value={m}>{m}</option>)}
@@ -468,7 +468,7 @@ const CustomNepalMap = () => {
     };
 
     return (
-        <div className="relative w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
+        <div className="relative w-full bg-white rounded-[4px] overflow-hidden border border-slate-200">
             {/* Filter modes */}
             <MapFilterHeader
                 mapLevel={mapLevel}
@@ -511,13 +511,13 @@ const CustomNepalMap = () => {
                             Offline Mode
                         </span>
                     )}
-                    <button onClick={() => d3.select(svgRef.current).transition().call(d3.zoom().scaleBy, 1.5)} className="p-1.5 bg-white rounded-md border border-slate-200 hover:bg-slate-50 shadow-sm transition-colors">
+                    <button onClick={() => d3.select(svgRef.current).transition().call(d3.zoom().scaleBy, 1.5)} className="p-1.5 bg-white rounded-[4px] border border-slate-200 hover:bg-slate-50 transition-colors">
                         <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
                     </button>
-                    <button onClick={() => d3.select(svgRef.current).transition().call(d3.zoom().scaleBy, 0.7)} className="p-1.5 bg-white rounded-md border border-slate-200 hover:bg-slate-50 shadow-sm transition-colors">
+                    <button onClick={() => d3.select(svgRef.current).transition().call(d3.zoom().scaleBy, 0.7)} className="p-1.5 bg-white rounded-[4px] border border-slate-200 hover:bg-slate-50 transition-colors">
                         <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" /></svg>
                     </button>
-                    <button onClick={handleReset} className="p-1.5 bg-white rounded-md border border-slate-200 hover:bg-slate-50 shadow-sm transition-colors">
+                    <button onClick={handleReset} className="p-1.5 bg-white rounded-[4px] border border-slate-200 hover:bg-slate-50 transition-colors">
                         <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4L20 20M20 4L4 20" /></svg>
                     </button>
                 </div>
@@ -580,8 +580,8 @@ const CustomNepalMap = () => {
             </div>
 
             {/* Breadcrumbs for navigation */}
-            <div className="bg-slate-900 text-white p-3 flex items-center text-[10px] font-bold gap-3 overflow-x-auto whitespace-nowrap">
-                <span className="text-slate-500 uppercase tracking-widest border-r border-slate-700 pr-3">Navigation</span>
+            <div className="bg-[#39304E] text-white p-3 flex items-center text-[10px] font-bold gap-3 overflow-x-auto whitespace-nowrap">
+                <span className="text-white uppercase tracking-widest border-r border-slate-700 pr-3">Navigation</span>
                 <button className="hover:text-nepalRed transition-colors uppercase" onClick={handleReset}>National</button>
                 {selectedProvince && (
                     <>
