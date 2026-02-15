@@ -1,0 +1,1858 @@
+{
+  "districts": {
+    "taplejung": {
+      "id": "taplejung",
+      "name": "Taplejung",
+      "name_np": "ताप्लेजुङ",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Phungling Municipality",
+          "area_np": "फुङलिङ नगरपालिका",
+          "voters": 85234,
+          "polling_stations": 45,
+          "center": "Phungling Bazar"
+        }
+      ]
+    },
+    "panchthar": {
+      "id": "panchthar",
+      "name": "Panchthar",
+      "name_np": "पाँचथर",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Phidim Municipality",
+          "area_np": "फिदिम नगरपालिका",
+          "voters": 78901,
+          "polling_stations": 42,
+          "center": "Phidim Bazar"
+        }
+      ]
+    },
+    "ilam": {
+      "id": "ilam",
+      "name": "Ilam",
+      "name_np": "इलाम",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 2,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Ilam Municipality",
+          "area_np": "इलाम नगरपालिका",
+          "voters": 72345,
+          "polling_stations": 38,
+          "center": "Ilam Bazar"
+        },
+        {
+          "number": 2,
+          "area": "Deumai Municipality",
+          "area_np": "देउमाई नगरपालिका",
+          "voters": 69123,
+          "polling_stations": 36,
+          "center": "Suryodaya"
+        }
+      ]
+    },
+    "jhapa": {
+      "id": "jhapa",
+      "name": "Jhapa",
+      "name_np": "झापा",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 5,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Mechinagar Municipality",
+          "area_np": "मेचीनगर नगरपालिका",
+          "voters": 89234,
+          "polling_stations": 47,
+          "center": "Kakarvitta"
+        },
+        {
+          "number": 2,
+          "area": "Bhadrapur Municipality",
+          "area_np": "भद्रपुर नगरपालिका",
+          "voters": 85678,
+          "polling_stations": 45,
+          "center": "Bhadrapur"
+        },
+        {
+          "number": 3,
+          "area": "Birtamod Municipality",
+          "area_np": "बिर्तामोड नगरपालिका",
+          "voters": 92345,
+          "polling_stations": 49,
+          "center": "Birtamod"
+        },
+        {
+          "number": 4,
+          "area": "Damak Municipality",
+          "area_np": "दमक नगरपालिका",
+          "voters": 88901,
+          "polling_stations": 46,
+          "center": "Damak"
+        },
+        {
+          "number": 5,
+          "area": "Gauradaha Municipality",
+          "area_np": "गौरादह नगरपालिका",
+          "voters": 81456,
+          "polling_stations": 43,
+          "center": "Gauradaha"
+        }
+      ]
+    },
+    "morang": {
+      "id": "morang",
+      "name": "Morang",
+      "name_np": "मोरङ",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 6,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Biratnagar Metropolitan City (Ward 1-8)",
+          "area_np": "विराटनगर महानगरपालिका (वडा १-८)",
+          "voters": 95678,
+          "polling_stations": 51,
+          "center": "Biratnagar"
+        },
+        {
+          "number": 2,
+          "area": "Biratnagar Metropolitan City (Ward 9-16)",
+          "area_np": "विराटनगर महानगरपालिका (वडा ९-१६)",
+          "voters": 93456,
+          "polling_stations": 49,
+          "center": "Biratnagar"
+        },
+        {
+          "number": 3,
+          "area": "Sundarharaicha Municipality",
+          "area_np": "सुन्दरहरैंचा नगरपालिका",
+          "voters": 87890,
+          "polling_stations": 46,
+          "center": "Sundarharaicha"
+        },
+        {
+          "number": 4,
+          "area": "Belbari Municipality",
+          "area_np": "बेलबारी नगरपालिका",
+          "voters": 84567,
+          "polling_stations": 44,
+          "center": "Belbari"
+        },
+        {
+          "number": 5,
+          "area": "Letang Municipality",
+          "area_np": "लेटाङ नगरपालिका",
+          "voters": 82345,
+          "polling_stations": 43,
+          "center": "Letang"
+        },
+        {
+          "number": 6,
+          "area": "Ratuwamai Municipality",
+          "area_np": "रतुवामाई नगरपालिका",
+          "voters": 80123,
+          "polling_stations": 42,
+          "center": "Ratuwamai"
+        }
+      ]
+    },
+    "sunsari": {
+      "id": "sunsari",
+      "name": "Sunsari",
+      "name_np": "सुनसरी",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 4,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Itahari Sub-Metropolitan City",
+          "area_np": "इटहरी उपमहानगरपालिका",
+          "voters": 91234,
+          "polling_stations": 48,
+          "center": "Itahari"
+        },
+        {
+          "number": 2,
+          "area": "Dharan Sub-Metropolitan City",
+          "area_np": "धरान उपमहानगरपालिका",
+          "voters": 94567,
+          "polling_stations": 50,
+          "center": "Dharan"
+        },
+        {
+          "number": 3,
+          "area": "Inaruwa Municipality",
+          "area_np": "इनरुवा नगरपालिका",
+          "voters": 85678,
+          "polling_stations": 45,
+          "center": "Inaruwa"
+        },
+        {
+          "number": 4,
+          "area": "Duhabi Municipality",
+          "area_np": "दुहबी नगरपालिका",
+          "voters": 83456,
+          "polling_stations": 44,
+          "center": "Duhabi"
+        }
+      ]
+    },
+    "udayapur": {
+      "id": "udayapur",
+      "name": "Udayapur",
+      "name_np": "उदयपुर",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 2,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Triyuga Municipality",
+          "area_np": "त्रियुगा नगरपालिका",
+          "voters": 82345,
+          "polling_stations": 43,
+          "center": "Gaighat"
+        },
+        {
+          "number": 2,
+          "area": "Katari Municipality",
+          "area_np": "कटारी नगरपालिका",
+          "voters": 78901,
+          "polling_stations": 41,
+          "center": "Katari"
+        }
+      ]
+    },
+    "bhojpur": {
+      "id": "bhojpur",
+      "name": "Bhojpur",
+      "name_np": "भोजपुर",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Bhojpur Municipality",
+          "area_np": "भोजपुर नगरपालिका",
+          "voters": 66789,
+          "polling_stations": 35,
+          "center": "Bhojpur Bazar"
+        }
+      ]
+    },
+    "dhankuta": {
+      "id": "dhankuta",
+      "name": "Dhankuta",
+      "name_np": "धनकुटा",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Dhankuta Municipality",
+          "area_np": "धनकुटा नगरपालिका",
+          "voters": 64567,
+          "polling_stations": 34,
+          "center": "Dhankuta Bazar"
+        }
+      ]
+    },
+    "terhathum": {
+      "id": "terhathum",
+      "name": "Tehrathum",
+      "name_np": "तेह्रथुम",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Myanglung Municipality",
+          "area_np": "म्याङलुङ नगरपालिका",
+          "voters": 60123,
+          "polling_stations": 32,
+          "center": "Myanglung"
+        }
+      ]
+    },
+    "sankhuwasabha": {
+      "id": "sankhuwasabha",
+      "name": "Sankhuwasabha",
+      "name_np": "सङ्खुवासभा",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Khandbari Municipality",
+          "area_np": "खाँदबारी नगरपालिका",
+          "voters": 63456,
+          "polling_stations": 33,
+          "center": "Khandbari"
+        }
+      ]
+    },
+    "solukhumbu": {
+      "id": "solukhumbu",
+      "name": "Solukhumbu",
+      "name_np": "सोलुखुम्बु",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Salleri",
+          "area_np": "सल्लेरी",
+          "voters": 57890,
+          "polling_stations": 30,
+          "center": "Salleri"
+        }
+      ]
+    },
+    "okhaldhunga": {
+      "id": "okhaldhunga",
+      "name": "Okhaldhunga",
+      "name_np": "ओखलढुंगा",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Siddhicharan Municipality",
+          "area_np": "सिद्धिचरण नगरपालिका",
+          "voters": 59876,
+          "polling_stations": 31,
+          "center": "Okhaldhunga"
+        }
+      ]
+    },
+    "khotang": {
+      "id": "khotang",
+      "name": "Khotang",
+      "name_np": "खोटाङ",
+      "province": "Province 1",
+      "province_np": "प्रदेश नं. १",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Diktel Rupakot Majhuwagadhi Municipality",
+          "area_np": "दिक्तेल रुपाकोट मझुवागढी नगरपालिका",
+          "voters": 58765,
+          "polling_stations": 31,
+          "center": "Diktel"
+        }
+      ]
+    },
+    "saptari": {
+      "id": "saptari",
+      "name": "Saptari",
+      "name_np": "सप्तरी",
+      "province": "Madhesh",
+      "province_np": "मधेश प्रदेश",
+      "total_constituencies": 4,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Rajbiraj Municipality",
+          "area_np": "राजविराज नगरपालिका",
+          "voters": 86789,
+          "polling_stations": 46,
+          "center": "Rajbiraj"
+        },
+        {
+          "number": 2,
+          "area": "Kanchanrup Municipality",
+          "area_np": "कञ्चनरुप नगरपालिका",
+          "voters": 82345,
+          "polling_stations": 44,
+          "center": "Kanchanrup"
+        },
+        {
+          "number": 3,
+          "area": "Bodebarsain Municipality",
+          "area_np": "बोदेबरसाइन नगरपालिका",
+          "voters": 80123,
+          "polling_stations": 42,
+          "center": "Bodebarsain"
+        },
+        {
+          "number": 4,
+          "area": "Surunga Municipality",
+          "area_np": "सुरुङ्गा नगरपालिका",
+          "voters": 78456,
+          "polling_stations": 41,
+          "center": "Surunga"
+        }
+      ]
+    },
+    "siraha": {
+      "id": "siraha",
+      "name": "Siraha",
+      "name_np": "सिराहा",
+      "province": "Madhesh",
+      "province_np": "मधेश प्रदेश",
+      "total_constituencies": 4,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Siraha Municipality",
+          "area_np": "सिराहा नगरपालिका",
+          "voters": 84567,
+          "polling_stations": 45,
+          "center": "Siraha"
+        },
+        {
+          "number": 2,
+          "area": "Lahan Municipality",
+          "area_np": "लहान नगरपालिका",
+          "voters": 87890,
+          "polling_stations": 47,
+          "center": "Lahan"
+        },
+        {
+          "number": 3,
+          "area": "Golbazar Municipality",
+          "area_np": "गोलबजार नगरपालिका",
+          "voters": 81234,
+          "polling_stations": 43,
+          "center": "Golbazar"
+        },
+        {
+          "number": 4,
+          "area": "Mirchaiya Municipality",
+          "area_np": "मिर्चैया नगरपालिका",
+          "voters": 79876,
+          "polling_stations": 42,
+          "center": "Mirchaiya"
+        }
+      ]
+    },
+    "dhanusha": {
+      "id": "dhanusha",
+      "name": "Dhanusha",
+      "name_np": "धनुषा",
+      "province": "Madhesh",
+      "province_np": "मधेश प्रदेश",
+      "total_constituencies": 4,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Janakpur Sub-Metropolitan City",
+          "area_np": "जनकपुर उपमहानगरपालिका",
+          "voters": 95678,
+          "polling_stations": 51,
+          "center": "Janakpur"
+        },
+        {
+          "number": 2,
+          "area": "Dhanushadham Municipality",
+          "area_np": "धनुषाधाम नगरपालिका",
+          "voters": 82345,
+          "polling_stations": 44,
+          "center": "Dhanushadham"
+        },
+        {
+          "number": 3,
+          "area": "Mithila Bihari Municipality",
+          "area_np": "मिथिला बिहारी नगरपालिका",
+          "voters": 80123,
+          "polling_stations": 42,
+          "center": "Mithila"
+        },
+        {
+          "number": 4,
+          "area": "Nagarain Municipality",
+          "area_np": "नगराइन नगरपालिका",
+          "voters": 77890,
+          "polling_stations": 41,
+          "center": "Nagarain"
+        }
+      ]
+    },
+    "mahottari": {
+      "id": "mahottari",
+      "name": "Mahottari",
+      "name_np": "महोत्तरी",
+      "province": "Madhesh",
+      "province_np": "मधेश प्रदेश",
+      "total_constituencies": 4,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Jaleshwor Municipality",
+          "area_np": "जलेश्वर नगरपालिका",
+          "voters": 84567,
+          "polling_stations": 45,
+          "center": "Jaleshwor"
+        },
+        {
+          "number": 2,
+          "area": "Bardibas Municipality",
+          "area_np": "बर्दिबास नगरपालिका",
+          "voters": 86789,
+          "polling_stations": 46,
+          "center": "Bardibas"
+        },
+        {
+          "number": 3,
+          "area": "Gaushala Municipality",
+          "area_np": "गौशाला नगरपालिका",
+          "voters": 82345,
+          "polling_stations": 44,
+          "center": "Gaushala"
+        },
+        {
+          "number": 4,
+          "area": "Loharpatti Municipality",
+          "area_np": "लोहरपट्टी नगरपालिका",
+          "voters": 80123,
+          "polling_stations": 42,
+          "center": "Loharpatti"
+        }
+      ]
+    },
+    "sarlahi": {
+      "id": "sarlahi",
+      "name": "Sarlahi",
+      "name_np": "सर्लाही",
+      "province": "Madhesh",
+      "province_np": "मधेश प्रदेश",
+      "total_constituencies": 4,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Malangwa Municipality",
+          "area_np": "मलङ्गवा नगरपालिका",
+          "voters": 83456,
+          "polling_stations": 44,
+          "center": "Malangwa"
+        },
+        {
+          "number": 2,
+          "area": "Hariwan Municipality",
+          "area_np": "हरिवन नगरपालिका",
+          "voters": 81234,
+          "polling_stations": 43,
+          "center": "Hariwan"
+        },
+        {
+          "number": 3,
+          "area": "Lalbandi Municipality",
+          "area_np": "लालबन्दी नगरपालिका",
+          "voters": 84567,
+          "polling_stations": 45,
+          "center": "Lalbandi"
+        },
+        {
+          "number": 4,
+          "area": "Barhathwa Municipality",
+          "area_np": "बरहथवा नगरपालिका",
+          "voters": 79876,
+          "polling_stations": 42,
+          "center": "Barhathwa"
+        }
+      ]
+    },
+    "rautahat": {
+      "id": "rautahat",
+      "name": "Rautahat",
+      "name_np": "रौतहट",
+      "province": "Madhesh",
+      "province_np": "मधेश प्रदेश",
+      "total_constituencies": 4,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Gaur Municipality",
+          "area_np": "गौर नगरपालिका",
+          "voters": 85678,
+          "polling_stations": 45,
+          "center": "Gaur"
+        },
+        {
+          "number": 2,
+          "area": "Chandrapur Municipality",
+          "area_np": "चन्द्रपुर नगरपालिका",
+          "voters": 82345,
+          "polling_stations": 44,
+          "center": "Chandrapur"
+        },
+        {
+          "number": 3,
+          "area": "Garuda Municipality",
+          "area_np": "गरुडा नगरपालिका",
+          "voters": 80123,
+          "polling_stations": 42,
+          "center": "Garuda"
+        },
+        {
+          "number": 4,
+          "area": "Baudhimai Municipality",
+          "area_np": "बौधीमाई नगरपालिका",
+          "voters": 77890,
+          "polling_stations": 41,
+          "center": "Baudhimai"
+        }
+      ]
+    },
+    "bara": {
+      "id": "bara",
+      "name": "Bara",
+      "name_np": "बारा",
+      "province": "Madhesh",
+      "province_np": "मधेश प्रदेश",
+      "total_constituencies": 4,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Kalaiya Sub-Metropolitan City",
+          "area_np": "कलैया उपमहानगरपालिका",
+          "voters": 93456,
+          "polling_stations": 50,
+          "center": "Kalaiya"
+        },
+        {
+          "number": 2,
+          "area": "Simraungadh Municipality",
+          "area_np": "सिम्रौनगढ नगरपालिका",
+          "voters": 85678,
+          "polling_stations": 45,
+          "center": "Simraungadh"
+        },
+        {
+          "number": 3,
+          "area": "Jitpur Simara Sub-Metropolitan City",
+          "area_np": "जीतपुर सिमरा उपमहानगरपालिका",
+          "voters": 91234,
+          "polling_stations": 48,
+          "center": "Simara"
+        },
+        {
+          "number": 4,
+          "area": "Kolhabi Municipality",
+          "area_np": "कोल्हवी नगरपालिका",
+          "voters": 82345,
+          "polling_stations": 44,
+          "center": "Kolhabi"
+        }
+      ]
+    },
+    "parsa": {
+      "id": "parsa",
+      "name": "Parsa",
+      "name_np": "पर्सा",
+      "province": "Madhesh",
+      "province_np": "मधेश प्रदेश",
+      "total_constituencies": 4,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Birgunj Metropolitan City",
+          "area_np": "वीरगञ्ज महानगरपालिका",
+          "voters": 101234,
+          "polling_stations": 54,
+          "center": "Birgunj"
+        },
+        {
+          "number": 2,
+          "area": "Pokhariya Municipality",
+          "area_np": "पोखरिया नगरपालिका",
+          "voters": 82345,
+          "polling_stations": 44,
+          "center": "Pokhariya"
+        },
+        {
+          "number": 3,
+          "area": "Bahudarmai Municipality",
+          "area_np": "बहुदरमाई नगरपालिका",
+          "voters": 80123,
+          "polling_stations": 42,
+          "center": "Bahudarmai"
+        },
+        {
+          "number": 4,
+          "area": "Parsagadhi Municipality",
+          "area_np": "पर्सागढी नगरपालिका",
+          "voters": 77890,
+          "polling_stations": 41,
+          "center": "Parsagadhi"
+        }
+      ]
+    },
+    "kathmandu": {
+      "id": "kathmandu",
+      "name": "Kathmandu",
+      "name_np": "काठमाडौं",
+      "province": "Bagmati",
+      "province_np": "बागमती प्रदेश",
+      "total_constituencies": 10,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Kathmandu Metropolitan City (Ward 1-4)",
+          "area_np": "काठमाडौं महानगरपालिका (वडा १-४)",
+          "voters": 92345,
+          "polling_stations": 49,
+          "center": "Banasthali"
+        },
+        {
+          "number": 2,
+          "area": "Kathmandu Metropolitan City (Ward 5-8)",
+          "area_np": "काठमाडौं महानगरपालिका (वडा ५-८)",
+          "voters": 95678,
+          "polling_stations": 51,
+          "center": "Maitighar"
+        },
+        {
+          "number": 3,
+          "area": "Kathmandu Metropolitan City (Ward 9-12)",
+          "area_np": "काठमाडौं महानगरपालिका (वडा ९-१२)",
+          "voters": 97890,
+          "polling_stations": 52,
+          "center": "New Baneshwor"
+        },
+        {
+          "number": 4,
+          "area": "Kathmandu Metropolitan City (Ward 13-16)",
+          "area_np": "काठमाडौं महानगरपालिका (वडा १३-१६)",
+          "voters": 94567,
+          "polling_stations": 50,
+          "center": "Kalanki"
+        },
+        {
+          "number": 5,
+          "area": "Kathmandu Metropolitan City (Ward 17-20)",
+          "area_np": "काठमाडौं महानगरपालिका (वडा १७-२०)",
+          "voters": 96789,
+          "polling_stations": 51,
+          "center": "Swayambhu"
+        },
+        {
+          "number": 6,
+          "area": "Kathmandu Metropolitan City (Ward 21-24)",
+          "area_np": "काठमाडौं महानगरपालिका (वडा २१-२४)",
+          "voters": 93456,
+          "polling_stations": 50,
+          "center": "Balaju"
+        },
+        {
+          "number": 7,
+          "area": "Kathmandu Metropolitan City (Ward 25-28)",
+          "area_np": "काठमाडौं महानगरपालिका (वडा २५-२८)",
+          "voters": 94567,
+          "polling_stations": 50,
+          "center": "Chabahil"
+        },
+        {
+          "number": 8,
+          "area": "Kathmandu Metropolitan City (Ward 29-32)",
+          "area_np": "काठमाडौं महानगरपालिका (वडा २९-३२)",
+          "voters": 95678,
+          "polling_stations": 51,
+          "center": "Koteshwor"
+        },
+        {
+          "number": 9,
+          "area": "Kirtipur Municipality",
+          "area_np": "कीर्तिपुर नगरपालिका",
+          "voters": 82345,
+          "polling_stations": 44,
+          "center": "Kirtipur"
+        },
+        {
+          "number": 10,
+          "area": "Shankharapur Municipality",
+          "area_np": "शंखरापुर नगरपालिका",
+          "voters": 78901,
+          "polling_stations": 42,
+          "center": "Sankharapur"
+        }
+      ]
+    },
+    "lalitpur": {
+      "id": "lalitpur",
+      "name": "Lalitpur",
+      "name_np": "ललितपुर",
+      "province": "Bagmati",
+      "province_np": "बागमती प्रदेश",
+      "total_constituencies": 3,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Lalitpur Metropolitan City (Ward 1-11)",
+          "area_np": "ललितपुर महानगरपालिका (वडा १-११)",
+          "voters": 92345,
+          "polling_stations": 49,
+          "center": "Patan"
+        },
+        {
+          "number": 2,
+          "area": "Lalitpur Metropolitan City (Ward 12-22)",
+          "area_np": "ललितपुर महानगरपालिका (वडा १२-२२)",
+          "voters": 94567,
+          "polling_stations": 50,
+          "center": "Jawalakhel"
+        },
+        {
+          "number": 3,
+          "area": "Godawari Municipality",
+          "area_np": "गोदावरी नगरपालिका",
+          "voters": 83456,
+          "polling_stations": 44,
+          "center": "Godawari"
+        }
+      ]
+    },
+    "bhaktapur": {
+      "id": "bhaktapur",
+      "name": "Bhaktapur",
+      "name_np": "भक्तपुर",
+      "province": "Bagmati",
+      "province_np": "बागमती प्रदेश",
+      "total_constituencies": 2,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Bhaktapur Municipality",
+          "area_np": "भक्तपुर नगरपालिका",
+          "voters": 86789,
+          "polling_stations": 46,
+          "center": "Bhaktapur"
+        },
+        {
+          "number": 2,
+          "area": "Madhyapur Thimi Municipality",
+          "area_np": "मध्यपुर थिमि नगरपालिका",
+          "voters": 82345,
+          "polling_stations": 44,
+          "center": "Thimi"
+        }
+      ]
+    },
+    "chitwan": {
+      "id": "chitwan",
+      "name": "Chitwan",
+      "name_np": "चितवन",
+      "province": "Bagmati",
+      "province_np": "बागमती प्रदेश",
+      "total_constituencies": 5,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Bharatpur Metropolitan City (Ward 1-7)",
+          "area_np": "भरतपुर महानगरपालिका (वडा १-७)",
+          "voters": 93456,
+          "polling_stations": 50,
+          "center": "Bharatpur"
+        },
+        {
+          "number": 2,
+          "area": "Bharatpur Metropolitan City (Ward 8-14)",
+          "area_np": "भरतपुर महानगरपालिका (वडा ८-१४)",
+          "voters": 94567,
+          "polling_stations": 50,
+          "center": "Narayangarh"
+        },
+        {
+          "number": 3,
+          "area": "Ratnanagar Municipality",
+          "area_np": "रत्ननगर नगरपालिका",
+          "voters": 86789,
+          "polling_stations": 46,
+          "center": "Ratnanagar"
+        },
+        {
+          "number": 4,
+          "area": "Khairhani Municipality",
+          "area_np": "खैरहनी नगरपालिका",
+          "voters": 83456,
+          "polling_stations": 44,
+          "center": "Khairhani"
+        },
+        {
+          "number": 5,
+          "area": "Madi Municipality",
+          "area_np": "माडी नगरपालिका",
+          "voters": 74567,
+          "polling_stations": 39,
+          "center": "Madi"
+        }
+      ]
+    },
+    "gorkha": {
+      "id": "gorkha",
+      "name": "Gorkha",
+      "name_np": "गोरखा",
+      "province": "Gandaki",
+      "province_np": "गण्डकी प्रदेश",
+      "total_constituencies": 2,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Gorkha Municipality",
+          "area_np": "गोरखा नगरपालिका",
+          "voters": 75678,
+          "polling_stations": 40,
+          "center": "Gorkha Bazar"
+        },
+        {
+          "number": 2,
+          "area": "Palungtar Municipality",
+          "area_np": "पालुङटार नगरपालिका",
+          "voters": 72345,
+          "polling_stations": 38,
+          "center": "Palungtar"
+        }
+      ]
+    },
+    "lamjung": {
+      "id": "lamjung",
+      "name": "Lamjung",
+      "name_np": "लमजुङ",
+      "province": "Gandaki",
+      "province_np": "गण्डकी प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Besisahar Municipality",
+          "area_np": "बेसीसहर नगरपालिका",
+          "voters": 69876,
+          "polling_stations": 37,
+          "center": "Besisahar"
+        }
+      ]
+    },
+    "tanahu": {
+      "id": "tanahu",
+      "name": "Tanahu",
+      "name_np": "तनहुँ",
+      "province": "Gandaki",
+      "province_np": "गण्डकी प्रदेश",
+      "total_constituencies": 2,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Byas Municipality",
+          "area_np": "व्यास नगरपालिका",
+          "voters": 77890,
+          "polling_stations": 41,
+          "center": "Damauli"
+        },
+        {
+          "number": 2,
+          "area": "Shuklagandaki Municipality",
+          "area_np": "शुक्लागण्डकी नगरपालिका",
+          "voters": 75678,
+          "polling_stations": 40,
+          "center": "Shuklagandaki"
+        }
+      ]
+    },
+    "kaski": {
+      "id": "kaski",
+      "name": "Kaski",
+      "name_np": "कास्की",
+      "province": "Gandaki",
+      "province_np": "गण्डकी प्रदेश",
+      "total_constituencies": 3,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Pokhara Metropolitan City (Ward 1-11)",
+          "area_np": "पोखरा महानगरपालिका (वडा १-११)",
+          "voters": 92345,
+          "polling_stations": 49,
+          "center": "Pokhara"
+        },
+        {
+          "number": 2,
+          "area": "Pokhara Metropolitan City (Ward 12-22)",
+          "area_np": "पोखरा महानगरपालिका (वडा १२-२२)",
+          "voters": 94567,
+          "polling_stations": 50,
+          "center": "Lekhnath"
+        },
+        {
+          "number": 3,
+          "area": "Pokhara Metropolitan City (Ward 23-33)",
+          "area_np": "पोखरा महानगरपालिका (वडा २३-३३)",
+          "voters": 91234,
+          "polling_stations": 48,
+          "center": "Hemja"
+        }
+      ]
+    },
+    "manang": {
+      "id": "manang",
+      "name": "Manang",
+      "name_np": "मनाङ",
+      "province": "Gandaki",
+      "province_np": "गण्डकी प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Chame Rural Municipality",
+          "area_np": "चामे गाउँपालिका",
+          "voters": 23456,
+          "polling_stations": 12,
+          "center": "Chame"
+        }
+      ]
+    },
+    "mustang": {
+      "id": "mustang",
+      "name": "Mustang",
+      "name_np": "मुस्ताङ",
+      "province": "Gandaki",
+      "province_np": "गण्डकी प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Jomsom Rural Municipality",
+          "area_np": "जोमसोम गाउँपालिका",
+          "voters": 25678,
+          "polling_stations": 13,
+          "center": "Jomsom"
+        }
+      ]
+    },
+    "myagdi": {
+      "id": "myagdi",
+      "name": "Myagdi",
+      "name_np": "म्याग्दी",
+      "province": "Gandaki",
+      "province_np": "गण्डकी प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Beni Municipality",
+          "area_np": "बेनी नगरपालिका",
+          "voters": 63456,
+          "polling_stations": 33,
+          "center": "Beni"
+        }
+      ]
+    },
+    "parbat": {
+      "id": "parbat",
+      "name": "Parbat",
+      "name_np": "पर्वत",
+      "province": "Gandaki",
+      "province_np": "गण्डकी प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Kusma Municipality",
+          "area_np": "कुश्मा नगरपालिका",
+          "voters": 65678,
+          "polling_stations": 34,
+          "center": "Kusma"
+        }
+      ]
+    },
+    "baglung": {
+      "id": "baglung",
+      "name": "Baglung",
+      "name_np": "बागलुङ",
+      "province": "Gandaki",
+      "province_np": "गण्डकी प्रदेश",
+      "total_constituencies": 2,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Baglung Municipality",
+          "area_np": "बागलुङ नगरपालिका",
+          "voters": 73456,
+          "polling_stations": 39,
+          "center": "Baglung"
+        },
+        {
+          "number": 2,
+          "area": "Galkot Municipality",
+          "area_np": "गल्कोट नगरपालिका",
+          "voters": 69876,
+          "polling_stations": 37,
+          "center": "Galkot"
+        }
+      ]
+    },
+    "gulmi": {
+      "id": "gulmi",
+      "name": "Gulmi",
+      "name_np": "गुल्मी",
+      "province": "Lumbini",
+      "province_np": "लुम्बिनी प्रदेश",
+      "total_constituencies": 2,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Resunga Municipality",
+          "area_np": "रेसुङ्गा नगरपालिका",
+          "voters": 69876,
+          "polling_stations": 37,
+          "center": "Tamghas"
+        },
+        {
+          "number": 2,
+          "area": "Musikot Municipality",
+          "area_np": "मुसिकोट नगरपालिका",
+          "voters": 67890,
+          "polling_stations": 36,
+          "center": "Musikot"
+        }
+      ]
+    },
+    "palpa": {
+      "id": "palpa",
+      "name": "Palpa",
+      "name_np": "पाल्पा",
+      "province": "Lumbini",
+      "province_np": "लुम्बिनी प्रदेश",
+      "total_constituencies": 2,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Tansen Municipality",
+          "area_np": "तानसेन नगरपालिका",
+          "voters": 74567,
+          "polling_stations": 39,
+          "center": "Tansen"
+        },
+        {
+          "number": 2,
+          "area": "Rampur Municipality",
+          "area_np": "रामपुर नगरपालिका",
+          "voters": 72345,
+          "polling_stations": 38,
+          "center": "Rampur"
+        }
+      ]
+    },
+    "nawalparasi_east": {
+      "id": "nawalparasi_east",
+      "name": "Nawalparasi (East)",
+      "name_np": "नवलपरासी (पूर्व)",
+      "province": "Gandaki",
+      "province_np": "गण्डकी प्रदेश",
+      "total_constituencies": 2,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Kawasoti Municipality",
+          "area_np": "कावासोती नगरपालिका",
+          "voters": 83456,
+          "polling_stations": 44,
+          "center": "Kawasoti"
+        },
+        {
+          "number": 2,
+          "area": "Gaindakot Municipality",
+          "area_np": "गैंडाकोट नगरपालिका",
+          "voters": 81234,
+          "polling_stations": 43,
+          "center": "Gaindakot"
+        }
+      ]
+    },
+    "nawalparasi_west": {
+      "id": "nawalparasi_west",
+      "name": "Nawalparasi (West)",
+      "name_np": "नवलपरासी (पश्चिम)",
+      "province": "Lumbini",
+      "province_np": "लुम्बिनी प्रदेश",
+      "total_constituencies": 2,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Ramgram Municipality",
+          "area_np": "रामग्राम नगरपालिका",
+          "voters": 82345,
+          "polling_stations": 44,
+          "center": "Ramgram"
+        },
+        {
+          "number": 2,
+          "area": "Sunwal Municipality",
+          "area_np": "सुनवल नगरपालिका",
+          "voters": 80123,
+          "polling_stations": 42,
+          "center": "Sunwal"
+        }
+      ]
+    },
+    "rupandehi": {
+      "id": "rupandehi",
+      "name": "Rupandehi",
+      "name_np": "रुपन्देही",
+      "province": "Lumbini",
+      "province_np": "लुम्बिनी प्रदेश",
+      "total_constituencies": 5,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Butwal Sub-Metropolitan City",
+          "area_np": "बुटवल उपमहानगरपालिका",
+          "voters": 93456,
+          "polling_stations": 50,
+          "center": "Butwal"
+        },
+        {
+          "number": 2,
+          "area": "Devdaha Municipality",
+          "area_np": "देवदह नगरपालिका",
+          "voters": 85678,
+          "polling_stations": 45,
+          "center": "Devdaha"
+        },
+        {
+          "number": 3,
+          "area": "Siddharthanagar Municipality",
+          "area_np": "सिद्धार्थनगर नगरपालिका",
+          "voters": 87890,
+          "polling_stations": 47,
+          "center": "Bhairahawa"
+        },
+        {
+          "number": 4,
+          "area": "Lumbini Sanskritik Municipality",
+          "area_np": "लुम्बिनी सांस्कृतिक नगरपालिका",
+          "voters": 83456,
+          "polling_stations": 44,
+          "center": "Lumbini"
+        },
+        {
+          "number": 5,
+          "area": "Sainamaina Municipality",
+          "area_np": "सैनामैना नगरपालिका",
+          "voters": 81234,
+          "polling_stations": 43,
+          "center": "Sainamaina"
+        }
+      ]
+    },
+    "kapilvastu": {
+      "id": "kapilvastu",
+      "name": "Kapilvastu",
+      "name_np": "कपिलवस्तु",
+      "province": "Lumbini",
+      "province_np": "लुम्बिनी प्रदेश",
+      "total_constituencies": 3,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Kapilvastu Municipality",
+          "area_np": "कपिलवस्तु नगरपालिका",
+          "voters": 82345,
+          "polling_stations": 44,
+          "center": "Taulihawa"
+        },
+        {
+          "number": 2,
+          "area": "Banganga Municipality",
+          "area_np": "बाणगंगा नगरपालिका",
+          "voters": 84567,
+          "polling_stations": 45,
+          "center": "Banganga"
+        },
+        {
+          "number": 3,
+          "area": "Krishnanagar Municipality",
+          "area_np": "कृष्णनगर नगरपालिका",
+          "voters": 80123,
+          "polling_stations": 42,
+          "center": "Krishnanagar"
+        }
+      ]
+    },
+    "arghakhanchi": {
+      "id": "arghakhanchi",
+      "name": "Arghakhanchi",
+      "name_np": "अर्घाखाँची",
+      "province": "Lumbini",
+      "province_np": "लुम्बिनी प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Sandhikharka Municipality",
+          "area_np": "सन्धिखर्क नगरपालिका",
+          "voters": 67890,
+          "polling_stations": 36,
+          "center": "Sandhikharka"
+        }
+      ]
+    },
+    "pyuthan": {
+      "id": "pyuthan",
+      "name": "Pyuthan",
+      "name_np": "प्युठान",
+      "province": "Lumbini",
+      "province_np": "लुम्बिनी प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Pyuthan Municipality",
+          "area_np": "प्युठान नगरपालिका",
+          "voters": 66789,
+          "polling_stations": 35,
+          "center": "Pyuthan"
+        }
+      ]
+    },
+    "rolpa": {
+      "id": "rolpa",
+      "name": "Rolpa",
+      "name_np": "रोल्पा",
+      "province": "Lumbini",
+      "province_np": "लुम्बिनी प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Liwang Rural Municipality",
+          "area_np": "लिवाङ गाउँपालिका",
+          "voters": 62345,
+          "polling_stations": 33,
+          "center": "Liwang"
+        }
+      ]
+    },
+    "rukum_east": {
+      "id": "rukum_east",
+      "name": "Rukum (East)",
+      "name_np": "रुकुम (पूर्व)",
+      "province": "Lumbini",
+      "province_np": "लुम्बिनी प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Putha Uttarganga Rural Municipality",
+          "area_np": "पुथा उत्तरगंगा गाउँपालिका",
+          "voters": 58901,
+          "polling_stations": 31,
+          "center": "Rukumkot"
+        }
+      ]
+    },
+    "rukum_west": {
+      "id": "rukum_west",
+      "name": "Rukum (West)",
+      "name_np": "रुकुम (पश्चिम)",
+      "province": "Karnali",
+      "province_np": "कर्णाली प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Musikot Municipality",
+          "area_np": "मुसिकोट नगरपालिका",
+          "voters": 59876,
+          "polling_stations": 32,
+          "center": "Musikot"
+        }
+      ]
+    },
+    "salyan": {
+      "id": "salyan",
+      "name": "Salyan",
+      "name_np": "सल्यान",
+      "province": "Karnali",
+      "province_np": "कर्णाली प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Salyan Municipality",
+          "area_np": "सल्यान नगरपालिका",
+          "voters": 64567,
+          "polling_stations": 34,
+          "center": "Salyan"
+        }
+      ]
+    },
+    "dang": {
+      "id": "dang",
+      "name": "Dang",
+      "name_np": "दाङ",
+      "province": "Lumbini",
+      "province_np": "लुम्बिनी प्रदेश",
+      "total_constituencies": 3,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Ghorahi Sub-Metropolitan City",
+          "area_np": "घोराही उपमहानगरपालिका",
+          "voters": 88901,
+          "polling_stations": 47,
+          "center": "Ghorahi"
+        },
+        {
+          "number": 2,
+          "area": "Tulsipur Sub-Metropolitan City",
+          "area_np": "तुल्सीपुर उपमहानगरपालिका",
+          "voters": 86789,
+          "polling_stations": 46,
+          "center": "Tulsipur"
+        },
+        {
+          "number": 3,
+          "area": "Lamahi Municipality",
+          "area_np": "लमही नगरपालिका",
+          "voters": 81234,
+          "polling_stations": 43,
+          "center": "Lamahi"
+        }
+      ]
+    },
+    "banke": {
+      "id": "banke",
+      "name": "Banke",
+      "name_np": "बाँके",
+      "province": "Lumbini",
+      "province_np": "लुम्बिनी प्रदेश",
+      "total_constituencies": 3,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Nepalgunj Sub-Metropolitan City",
+          "area_np": "नेपालगञ्ज उपमहानगरपालिका",
+          "voters": 92345,
+          "polling_stations": 49,
+          "center": "Nepalgunj"
+        },
+        {
+          "number": 2,
+          "area": "Kohalpur Municipality",
+          "area_np": "कोहलपुर नगरपालिका",
+          "voters": 86789,
+          "polling_stations": 46,
+          "center": "Kohalpur"
+        },
+        {
+          "number": 3,
+          "area": "Narainapur Rural Municipality",
+          "area_np": "नरैनापुर गाउँपालिका",
+          "voters": 72345,
+          "polling_stations": 38,
+          "center": "Narainapur"
+        }
+      ]
+    },
+    "bardiya": {
+      "id": "bardiya",
+      "name": "Bardiya",
+      "name_np": "बर्दिया",
+      "province": "Lumbini",
+      "province_np": "लुम्बिनी प्रदेश",
+      "total_constituencies": 2,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Gulariya Municipality",
+          "area_np": "गुलरिया नगरपालिका",
+          "voters": 83456,
+          "polling_stations": 44,
+          "center": "Gulariya"
+        },
+        {
+          "number": 2,
+          "area": "Bardiya National Park Area",
+          "area_np": "बर्दिया राष्ट्रिय निकुञ्ज क्षेत्र",
+          "voters": 68901,
+          "polling_stations": 36,
+          "center": "Thakurdwara"
+        }
+      ]
+    },
+    "surkhet": {
+      "id": "surkhet",
+      "name": "Surkhet",
+      "name_np": "सुर्खेत",
+      "province": "Karnali",
+      "province_np": "कर्णाली प्रदेश",
+      "total_constituencies": 2,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Birendranagar Municipality",
+          "area_np": "वीरेन्द्रनगर नगरपालिका",
+          "voters": 82345,
+          "polling_stations": 44,
+          "center": "Birendranagar"
+        },
+        {
+          "number": 2,
+          "area": "Gurbhakot Municipality",
+          "area_np": "गुर्भाकोट नगरपालिका",
+          "voters": 75678,
+          "polling_stations": 40,
+          "center": "Gurbhakot"
+        }
+      ]
+    },
+    "dailekh": {
+      "id": "dailekh",
+      "name": "Dailekh",
+      "name_np": "दैलेख",
+      "province": "Karnali",
+      "province_np": "कर्णाली प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Narayan Municipality",
+          "area_np": "नारायण नगरपालिका",
+          "voters": 66789,
+          "polling_stations": 35,
+          "center": "Dailekh"
+        }
+      ]
+    },
+    "jajarkot": {
+      "id": "jajarkot",
+      "name": "Jajarkot",
+      "name_np": "जाजरकोट",
+      "province": "Karnali",
+      "province_np": "कर्णाली प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Bheri Municipality",
+          "area_np": "भेरी नगरपालिका",
+          "voters": 61234,
+          "polling_stations": 32,
+          "center": "Jajarkot"
+        }
+      ]
+    },
+    "dolpa": {
+      "id": "dolpa",
+      "name": "Dolpa",
+      "name_np": "डोल्पा",
+      "province": "Karnali",
+      "province_np": "कर्णाली प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Thuli Bheri Municipality",
+          "area_np": "ठूली भेरी नगरपालिका",
+          "voters": 35678,
+          "polling_stations": 19,
+          "center": "Dunai"
+        }
+      ]
+    },
+    "jumla": {
+      "id": "jumla",
+      "name": "Jumla",
+      "name_np": "जुम्ला",
+      "province": "Karnali",
+      "province_np": "कर्णाली प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Chandannath Municipality",
+          "area_np": "चन्दननाथ नगरपालिका",
+          "voters": 43456,
+          "polling_stations": 23,
+          "center": "Jumla"
+        }
+      ]
+    },
+    "kalikot": {
+      "id": "kalikot",
+      "name": "Kalikot",
+      "name_np": "कालिकोट",
+      "province": "Karnali",
+      "province_np": "कर्णाली प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Manma Rural Municipality",
+          "area_np": "मान्म गाउँपालिका",
+          "voters": 46789,
+          "polling_stations": 25,
+          "center": "Manma"
+        }
+      ]
+    },
+    "mugu": {
+      "id": "mugu",
+      "name": "Mugu",
+      "name_np": "मुगु",
+      "province": "Karnali",
+      "province_np": "कर्णाली प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Chhayanath Rara Municipality",
+          "area_np": "छायाँनाथ रारा नगरपालिका",
+          "voters": 39876,
+          "polling_stations": 21,
+          "center": "Gamgadhi"
+        }
+      ]
+    },
+    "humla": {
+      "id": "humla",
+      "name": "Humla",
+      "name_np": "हुम्ला",
+      "province": "Karnali",
+      "province_np": "कर्णाली प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Simkot Rural Municipality",
+          "area_np": "सिमकोट गाउँपालिका",
+          "voters": 34567,
+          "polling_stations": 18,
+          "center": "Simkot"
+        }
+      ]
+    },
+    "kailali": {
+      "id": "kailali",
+      "name": "Kailali",
+      "name_np": "कैलाली",
+      "province": "Sudurpashchim",
+      "province_np": "सुदूरपश्चिम प्रदेश",
+      "total_constituencies": 5,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Dhangadhi Sub-Metropolitan City",
+          "area_np": "धनगढी उपमहानगरपालिका",
+          "voters": 92345,
+          "polling_stations": 49,
+          "center": "Dhangadhi"
+        },
+        {
+          "number": 2,
+          "area": "Tikapur Municipality",
+          "area_np": "टीकापुर नगरपालिका",
+          "voters": 83456,
+          "polling_stations": 44,
+          "center": "Tikapur"
+        },
+        {
+          "number": 3,
+          "area": "Ghodaghodi Municipality",
+          "area_np": "घोडाघोडी नगरपालिका",
+          "voters": 80123,
+          "polling_stations": 42,
+          "center": "Ghodaghodi"
+        },
+        {
+          "number": 4,
+          "area": "Lamkichuha Municipality",
+          "area_np": "लम्कीचुहा नगरपालिका",
+          "voters": 78901,
+          "polling_stations": 41,
+          "center": "Lamki"
+        },
+        {
+          "number": 5,
+          "area": "Bhajani Municipality",
+          "area_np": "भजनी नगरपालिका",
+          "voters": 76789,
+          "polling_stations": 40,
+          "center": "Bhajani"
+        }
+      ]
+    },
+    "kanchanpur": {
+      "id": "kanchanpur",
+      "name": "Kanchanpur",
+      "name_np": "कञ्चनपुर",
+      "province": "Sudurpashchim",
+      "province_np": "सुदूरपश्चिम प्रदेश",
+      "total_constituencies": 3,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Bhimdatta Municipality",
+          "area_np": "भीमदत्त नगरपालिका",
+          "voters": 87890,
+          "polling_stations": 47,
+          "center": "Mahendranagar"
+        },
+        {
+          "number": 2,
+          "area": "Bedkot Municipality",
+          "area_np": "बेलकोट नगरपालिका",
+          "voters": 83456,
+          "polling_stations": 44,
+          "center": "Bedkot"
+        },
+        {
+          "number": 3,
+          "area": "Shuklaphanta Municipality",
+          "area_np": "शुक्लाफाँटा नगरपालिका",
+          "voters": 80123,
+          "polling_stations": 42,
+          "center": "Shuklaphanta"
+        }
+      ]
+    },
+    "dadeldhura": {
+      "id": "dadeldhura",
+      "name": "Dadeldhura",
+      "name_np": "डडेल्धुरा",
+      "province": "Sudurpashchim",
+      "province_np": "सुदूरपश्चिम प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Amargadhi Municipality",
+          "area_np": "अमरगढी नगरपालिका",
+          "voters": 63456,
+          "polling_stations": 33,
+          "center": "Amargadhi"
+        }
+      ]
+    },
+    "baitadi": {
+      "id": "baitadi",
+      "name": "Baitadi",
+      "name_np": "बैतडी",
+      "province": "Sudurpashchim",
+      "province_np": "सुदूरपश्चिम प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Dasharathchand Municipality",
+          "area_np": "दशरथचन्द नगरपालिका",
+          "voters": 65678,
+          "polling_stations": 34,
+          "center": "Baitadi"
+        }
+      ]
+    },
+    "darchula": {
+      "id": "darchula",
+      "name": "Darchula",
+      "name_np": "दार्चुला",
+      "province": "Sudurpashchim",
+      "province_np": "सुदूरपश्चिम प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Mahakali Municipality",
+          "area_np": "महाकाली नगरपालिका",
+          "voters": 58901,
+          "polling_stations": 31,
+          "center": "Darchula"
+        }
+      ]
+    },
+    "achham": {
+      "id": "achham",
+      "name": "Achham",
+      "name_np": "अछाम",
+      "province": "Sudurpashchim",
+      "province_np": "सुदूरपश्चिम प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Mangalsen Municipality",
+          "area_np": "मङ्गलसेन नगरपालिका",
+          "voters": 62345,
+          "polling_stations": 33,
+          "center": "Mangalsen"
+        }
+      ]
+    },
+    "doti": {
+      "id": "doti",
+      "name": "Doti",
+      "name_np": "डोटी",
+      "province": "Sudurpashchim",
+      "province_np": "सुदूरपश्चिम प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Dipayal Silgadhi Municipality",
+          "area_np": "दिपायल सिलगढी नगरपालिका",
+          "voters": 63456,
+          "polling_stations": 33,
+          "center": "Dipayal"
+        }
+      ]
+    },
+    "bajura": {
+      "id": "bajura",
+      "name": "Bajura",
+      "name_np": "बाजुरा",
+      "province": "Sudurpashchim",
+      "province_np": "सुदूरपश्चिम प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Badimalika Municipality",
+          "area_np": "बडीमालिका नगरपालिका",
+          "voters": 56789,
+          "polling_stations": 30,
+          "center": "Martadi"
+        }
+      ]
+    },
+    "bajhang": {
+      "id": "bajhang",
+      "name": "Bajhang",
+      "name_np": "बझाङ",
+      "province": "Sudurpashchim",
+      "province_np": "सुदूरपश्चिम प्रदेश",
+      "total_constituencies": 1,
+      "constituencies": [
+        {
+          "number": 1,
+          "area": "Jayaprithvi Municipality",
+          "area_np": "जयपृथ्वी नगरपालिका",
+          "voters": 54567,
+          "polling_stations": 29,
+          "center": "Chainpur"
+        }
+      ]
+    }
+  }
+}
