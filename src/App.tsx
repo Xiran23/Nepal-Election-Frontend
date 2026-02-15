@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import  { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setOnlineStatus } from './store/offlineSlice';
@@ -12,7 +12,7 @@ import AdminLogin from './pages/AdminLogin';
 import RegisterPage from './pages/RegisterPage';
 import ConstituencyPage from './pages/ConstituencyPage';
 // Services
-import { offlineService } from './services/offlineService';
+
 import { socketService } from './services/socketService';
 import { setupSocketListeners } from './store/setupSocketListeners';
 
